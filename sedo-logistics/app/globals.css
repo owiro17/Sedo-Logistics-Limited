@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-color:#009AD6;
+  --secondary-color:#004661;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,21 +15,66 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+background-color: #ECEFF0;
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  .btn-custom {
+    @apply bg-[#009AD6] hover:bg-[#004661] transition-all duration-300 text-white font-light font-raleway py-2 px-4 rounded;
+  }
+  .paragraph{
+    @apply text-sm text-primary text-center ;
+  }
+  .text-blue{
+    @apply text-[#009AD6];
+  }
+  .heading{
+    @apply text-4xl ;
+  }
+
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+.heading{
+  /* font-size: clamp(1.9rem, 2vw, 5rem); */
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  font-family: var(--font-raleway), sans-serif;
+  text-wrap: balance;
+
+
+}
+.small-heading{
+  font-size: clamp(1.3rem, 2vw, 5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  font-family: var(--font-raleway), sans-serif;
+}
+.paragraph{
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 400;
+  color: #000000;
+  font-family: var(--font-open-sans), sans-serif;
+  text-wrap: balance;
+
 }

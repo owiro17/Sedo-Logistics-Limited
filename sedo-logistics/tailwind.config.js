@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,9 +9,17 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-page": "url('/heroPagebg.svg')",
+        "triangleBg":"url('/triangleBg.svg')",
+        "aboutBg":"url('/aboutBg.svg')",
+        "cardBg":"url('/cardBg.svg')",
       },
+      fontFamily: {
+        raleway: ['var(--font-raleway)'],
+        openSans: ['var(--font-open-sans)'],
+      },
+
     },
   },
   plugins: [],
