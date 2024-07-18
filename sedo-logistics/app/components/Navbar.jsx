@@ -5,7 +5,7 @@ import { useState } from 'react'
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false)
   const menu = [
-    { name: 'Home', icon: '/home.svg', link: '/' },
+    { name: 'Home', icon: '/Home.svg', link: '/' },
     { name: 'About Us', icon: '/about.svg', link: '/about' },
     { name: 'Services', icon: '/service.svg', link: '/services' },
     { name: 'Login', icon: '/login.svg', link: '/login' },
