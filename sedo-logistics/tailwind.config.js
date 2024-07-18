@@ -14,11 +14,18 @@ export default {
         "triangleBg":"url('/triangleBg.svg')",
         "aboutBg":"url('/aboutBg.svg')",
         "cardBg":"url('/cardBg.svg')",
+        "reviewCardBg":"url('/reviewCardBg.svg')",
+        "footerBg":"url('/footer.svg')",
+
       },
-      fontFamily: {
-        raleway: ['var(--font-raleway)'],
-        openSans: ['var(--font-open-sans)'],
+    fontFamily: {
+        raleway: 'var(--font-raleway)',
+        openSans: 'var(--font-open-sans)',
       },
+    colors: {
+      primary: '#009AD6',
+      secondary: '#004661',
+    },
 
     },
   },

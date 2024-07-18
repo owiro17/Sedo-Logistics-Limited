@@ -14,11 +14,11 @@ const Navbar = () => {
     <>
       <nav className="flex flew-row bg-[#C8E9F9] justify-between items-center p-5 ">
         <Image src="/logo 3.png" alt="logo" width={150} height={150} />
-        <ul className='flex-row gap-9 hidden lg:flex'>
-          <li className="font-open-sans text-">Home</li>
-          <li className="font-open-sans">About Us</li>
-          <li className="font-open-sans">Services</li>
-          <li className="font-open-sans">Login</li>
+        <ul className='flex-row gap-12 hidden lg:flex'>
+          <li className="font-openSans hover:text-secondary hover:font-normal transition-all ease-in-out duration-100  "><a href="/">Home</a></li>
+          <li className="font-openSans hover:text-secondary hover:font-normal transition-all ease-in-out duration-100 "><a href="/about">About Us</a></li>
+          <li className="font-openSans hover:text-secondary hover:font-normal transition-all ease-in-out duration-100 "><a href="/services">Services</a></li>
+          <li className="font-openSans hover:text-secondary hover:font-normal transition-all ease-in-out duration-100 "><a href="/login">Login</a></li>
 
         </ul>
 

@@ -18,6 +18,9 @@
 
   }
 }
+/* *{
+  border:1px solid red  ;
+} */
 
 body {
 background-color: #ECEFF0;
@@ -35,13 +38,13 @@ background-color: #ECEFF0;
     @apply bg-[#009AD6] hover:bg-[#004661] transition-all duration-300 text-white font-light font-raleway py-2 px-4 rounded;
   }
   .paragraph{
-    @apply text-sm text-primary text-center ;
+    @apply  lg:text-base text-primary font-thin;
   }
   .text-blue{
     @apply text-[#009AD6];
   }
   .heading{
-    @apply text-4xl ;
+    @apply text-4xl lg:text-[45px] ;
   }
 
 }
@@ -70,11 +73,21 @@ background-color: #ECEFF0;
   color: var(--secondary-color);
   font-family: var(--font-raleway), sans-serif;
 }
-.paragraph{
-  font-size: clamp(1rem, 1vw, 1.5rem);
-  font-weight: 400;
+.paragraph,p{
+  /* font-size: clamp(1rem, 1.5vw, 1.5rem); */
+  font-weight: 300;
   color: #000000;
   font-family: var(--font-open-sans), sans-serif;
   text-wrap: balance;
 
+}
+input{
+  font-weight: 400;
+  color: #000000;
+  font-family: var(--font-open-sans), sans-serif;
+}
+
+li{
+  font-family: var(--font-open-sans), sans-serif;
+  font-weight: 300;
 }
