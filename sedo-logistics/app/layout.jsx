@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types"; // Add this import
 import { Open_Sans } from "next/font/google";
 import { Raleway } from "next/font/google";
+// eslint-disable-next-line no-unused-vars
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 const openSans = Open_Sans({ subsets: ["latin"] ,weight: ['300','400', '600'],display: 'swap', variable: '--font-open-sans',});
 const raleway = Raleway({ subsets: ["latin"], weight: ['100','200','300','400', '600'],display: 'swap', variable: '--font-raleway', });
 
@@ -23,6 +26,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+      <SpeedInsights></SpeedInsights>
+      <Analytics></Analytics>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body className={`${openSans.variable} ${raleway.variable}  lg:w-[85%] m-auto`}>
