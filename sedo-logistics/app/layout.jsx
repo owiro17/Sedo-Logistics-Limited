@@ -28,6 +28,9 @@ export default function RootLayout({ children }) {
       <head>
       <SpeedInsights></SpeedInsights>
       <Analytics></Analytics>
+      <meta property="og:image" content="/logo 3.png" />
+      <meta property="og:title" content="Sedo Logistics Limited - Leading logistics company providing best logistics Solution" />
+      <meta property="og:url" content="https://www.sedologistics.co.ke/" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body className={`${openSans.variable} ${raleway.variable}  lg:w-[85%] m-auto`}>
