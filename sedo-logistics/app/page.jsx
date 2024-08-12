@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ReviewCard from "./components/ReviewCard";
-
+import Link from "next/link";
 export default function Home() {
   const ServiceCard = [
   {
@@ -61,8 +61,8 @@ export default function Home() {
     <main className="">
         <div className="bg-hero-page  lg:w-auto m-auto  py-20  flex flex-col md:items-center gap-2 justify-center p-8  ">
           <h1 className="heading  mt-10 lg:text-[45px] text-center ">Reliable <span className="text-blue">Logistics </span>Solutions <br></br> for Your <span className="text-blue">Business</span> </h1>
-          <p className="paragraph  text-center md:text-center lg:text-center ">Welcome to , your trusted partner in logistics and supply chain management. We offer efficient, cost-effective solutions to meet your transportation needs..</p>
-          <a href="/contact" className="btn-custom m-auto mt-6">Get Started</a>
+          <p className="paragraph  text-center md:text-center lg:text-center ">Welcome to <span className="text-blue">Sedo Logistics Limited</span>  , your trusted partner in logistics and supply chain management. We offer efficient, cost-effective solutions to meet your transportation needs..</p>
+          <Link href="#contact-us" className="btn-custom m-auto mt-6 " style={{scrollBehavior: 'smooth'}}>Get Started</Link>
         </div>
       {/* dashboard section */}
       <section className="flex flex-col lg:flex-row bg-triangleBg justify-evenly align-middle gap-[60px] p-[48px] py-20 rounded-lg">
@@ -72,9 +72,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col  gap-10 items-start ">
-          <h1 className="heading text-center lg:text-left  lg:text-4xl">Track <span className="text-blue">Shipping</span>  Expenses <br /> on Your Dashboard</h1>
+          <h1 className="heading m-auto text-center lg:text-left  lg:text-4xl">Track <span className="text-blue">Shipping</span>  Expenses <br /> on Your Dashboard</h1>
           <p className="paragraph text-center lg:text-left">Use our tracking system to monitor the status of your shipments in real-time and monitor your shipping costs using our interactive and easy to use dashboard.</p>
-          <a href="/dashboard" className="btn-custom m-auto ">Dashboard</a>
+          <Link href="" className="btn-custom m-auto ">Dashboard</Link>
         </div>
       </section>
 
@@ -84,22 +84,22 @@ export default function Home() {
 
         <div className="pb-[48px] flex flex-col lg:z-10  relative top-10 lg:top-0 lg:flex-row gap-8 lg:gap-16">
           {ServiceCard.map((card,index) => (
-            <div key={index} className="bg-cardBg bg-no-repeat py-[23px] px-[20px] rounded-lg shadow-lg  flex flex-col items-start justify-center gap-4 w-[100%] lg:w-[25%]">
+            <div key={index} className="bg-cardBg bg-cover   bg-no-repeat py-[21px] px-[28px] rounded-lg shadow-lg  flex flex-col items-start justify-center gap-4 w-[100%] lg:w-[25%]">
               <Image src={card.icon} alt={card.name}  width={40} height={40} />
               <h2 className="small-heading">{card.name}  </h2>
-              <a className="paragraph flex items-center justify-center gap-1" href={card.link}>see more<Image src="/arrowRight.svg" alt="see-more"  width={20} height={20} /></a>
+              <Link className="paragraph hover:text-primary flex items-center justify-center gap-1" href={card.link}>see more<Image src="/arrowRight.svg" alt="see-more"  width={20} height={20} /></Link>
             </div>
           ))}
 
         </div>
 
-        <div className="bg-aboutBg bg-no-repeat w-full rounded-lg  px-8 py-10  lg:pt-[140px] lg:bottom-[190px] lg:relative   lg:z-0  flex flex-col items-center ">
+        <div className="bg-aboutBg bg-cover bg-no-repeat w-full rounded-lg  px-8 py-10  lg:pt-[140px] lg:bottom-[190px] lg:relative   lg:z-0  flex flex-col items-center ">
           <h1 className="  heading text-center lg:mt-10 ">Leading Logistics Company</h1>
           <div className="lg:flex gap-6">
             {
               aboutData.map((item,index) =>(
               <div key={index} className="w-[50dvw] my-5 lg:w-[15dvw] flex flex-col items-center gap-2">
-                <h2 className="font-openSans  text-blue text-4xl font-bold ">{item.number}+</h2>
+                <h2 className="font-manrope  text-blue text-4xl font-bold ">{item.number}+</h2>
                 <hr className="w-[90%] border-zinc-500" />
                 <p className="font-openSans">{item.text}</p>
               </div>
@@ -131,14 +131,14 @@ export default function Home() {
       {/* what clients say section */}
 
       <section className=" relative top-20   flex flex-col items-center ">
-        <h1 className="heading text-center mt-[100px] ">Our <span className="text-blue">Clients</span>  Know <span className="text-blue">Best</span></h1>
+        <h1 className="heading text-center mt-[50px] ">Our <span className="text-blue">Clients</span>  Know <span className="text-blue">Best</span></h1>
         <div className="flex flex-col lg:flex-row items-center justify-evenly m-auto px-5 py-10 lg:px-0 gap-10">
           <ReviewCard></ReviewCard>
         </div>
       </section>
 
       {/* contact us section */}
-      <section className="">
+      <section id="contact-us" className="">
           <h1 className="heading text-center mt-[100px]"><span className="text-blue">Contact </span> us</h1>
           <div className="flex flex-col lg:flex-row lg:items-baseline mt-20  items-center m-auto basis-1/2">
           <Image className=" m-auto lg:px-0 px-10" src="/contact-ill.svg" alt="contact ill"  width={400} height={400} />
@@ -153,7 +153,6 @@ export default function Home() {
           </form>
           </div>
       </section>
-
     </main>
   );
 }

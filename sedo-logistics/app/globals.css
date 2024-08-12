@@ -77,8 +77,9 @@ background-color: #ECEFF0;
   /* font-size: clamp(1rem, 1.5vw, 1.5rem); */
   font-weight: 300;
   color: #000000;
-  font-family: var(--font-open-sans), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   text-wrap: balance;
+  letter-spacing: 0.3px;
 
 }
 input{
