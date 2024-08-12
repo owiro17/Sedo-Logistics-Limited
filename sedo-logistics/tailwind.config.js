@@ -16,7 +16,7 @@ export default {
         "cardBg":"url('/cardBg.svg')",
         "reviewCardBg":"url('/reviewCardBg.svg')",
         "footerBg":"url('/footer.svg')",
-        "aboutHeroBg":"url('/aboutHeroBg.svg')",
+        "aboutHeroBg":"url('/AboutHeroBg.svg')",
         "about-cardBg":"url('/about-cardBg.svg')"
 
       },
