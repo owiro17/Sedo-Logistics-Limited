@@ -103,6 +103,62 @@ const page = () => {
         </div>
       </section>
       <hr className="border-primary" />
+      <section className="h-screen flex flex-col space-y-24 justify-center">
+        <h1 className="font-extrabold leading-tight text-[3.5rem] font-raleway">
+          Understanding Road Freight
+          <br />
+          <span className="text-primary">Documentation</span>
+        </h1>
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col space-y-6 w-[20vw]">
+            <h3 className="text-center text-lg font-raleway py-4 px-8 w-full font-bold bg-[#C8E9F9] text-secondary">
+              Bill of Lading (BOL)
+            </h3>
+            <p className="bg-white w-full p-4 text-secondary h-full">
+              A legal document between the shipper and carrier detailing the
+              type, quantity, and destination of the goods being shipped.
+            </p>
+          </div>
+          <div className="flex flex-col space-y-6 w-[20vw]">
+            <h3 className="text-center text-lg font-raleway py-4 px-8 w-full font-bold bg-[#C8E9F9] text-secondary">
+              Consignment Note
+            </h3>
+            <p className="bg-white w-full p-4 text-secondary h-full">
+              A document that accompanies goods in transit, detailing the
+              contents, origin, and destination.
+            </p>
+          </div>
+          <div className="flex flex-col space-y-6 w-[20vw]">
+            <h3 className="text-center text-lg font-raleway py-4 px-8 w-full font-bold bg-[#C8E9F9] text-secondary">
+              Packing List
+            </h3>
+            <p className="bg-white w-full p-4 text-secondary h-full">
+              A list that details the items in each package, including
+              dimensions, weight, and packaging type
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-center space-x-24">
+          <div className="flex flex-col space-y-6 w-[20vw]">
+            <h3 className="text-center text-lg font-raleway py-4 px-8 w-full font-bold bg-[#C8E9F9] text-secondary">
+              Commercial Invoice
+            </h3>
+            <p className="bg-white w-full p-4 text-secondary h-full">
+              An invoice provided by the shipper to the receiver, outlining the
+              value and details of the goods being transported.
+            </p>
+          </div>
+          <div className="flex flex-col space-y-6 w-[20vw]">
+            <h3 className="text-center text-lg font-raleway py-4 px-8 w-full font-bold bg-[#C8E9F9] text-secondary">
+              Customs Documents
+            </h3>
+            <p className="bg-white w-full p-4 text-secondary h-full">
+              Required for cross-border shipments, these documents ensure
+              compliance with international shipping regulations.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
