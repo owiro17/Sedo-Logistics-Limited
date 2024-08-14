@@ -1,0 +1,26 @@
+import React from "react";
+
+const page = () => {
+  return (
+    <div>
+      <section>
+        <div>
+          <h1>
+            <span className="text-secondary">Reliable</span>Road Freight <br />
+            <span>Solutions</span>for your <br />
+            business
+          </h1>
+          <p>
+            Sedo Logistics offers dependable road freight services tailored to
+            meet your domestic and regional shipping needs. Our comprehensive
+            network and expert team ensure your cargo is delivered safely and on
+            time, whether across the country or to neighboring regions.
+          </p>
+          <button>Get Quote</button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default page;
