@@ -14,7 +14,7 @@ const ReviewCard = () => {
                         <h3 className="text-secondary font-raleway  text-center lg:text-left text-3xl font-semibold">{item.name}</h3>
 
                     </div>
-                    <p className="my-5 text-center lg:text-left font-manrope   font-thin">{item.comment}</p>
+                    <p className="my-5 text-center text-wrap lg:text-left font-manrope font-thin">{item.comment}</p>
                     <div className="flex  items-center gap-5 flex-col-reverse lg:flex-row justify-between mt-3 ">
                         {/* <Image src="/quote.svg" alt="quote" width={60} height={50} className="object-fill" /> */}
                         <div className="flex m-auto items-center gap-">
