@@ -17,7 +17,10 @@ export default {
         "reviewCardBg":"url('/reviewCardBg.svg')",
         "footerBg":"url('/footer.svg')",
         "aboutHeroBg":"url('/AboutHeroBg.svg')",
-        "about-cardBg":"url('/about-cardBg.svg')"
+        "about-cardBg":"url('/about-cardBg.svg')",
+        "airFreightBg": "url('/airfreightBg.svg')",
+        "freightCardBg": "url('/freightCardBg.svg')"
+    
 
       },
     fontFamily: {
