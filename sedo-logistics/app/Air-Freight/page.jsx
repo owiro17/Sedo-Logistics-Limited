@@ -90,7 +90,7 @@ const page = () => {
               cargo.
             </p>
             <div className="flex flex-col  lg:flex-row  gap-4 items-center justify-center mt-4">
-              <div className="flex bg-freightCardBg bg-cover flex-col items-center lg:items-start border-2 border-secondary rounded-lg p-4 w-[60dvw] lg:h-[40dvh] gap-2">
+              <div className="flex bg-freightCardBg bg-cover flex-col items-center lg:items-start border border-secondary rounded-lg p-4 w-[60dvw] lg:h-[40dvh] gap-2">
                 <Image
                   src={"/speed.svg"}
                   alt={""}
@@ -105,7 +105,7 @@ const page = () => {
                   Experience Fast transit times for urgent shipments.
                 </p>
               </div>
-              <div className="flex flex-col bg-freightCardBg bg-cover items-center lg:items-start border-2 border-secondary rounded-lg p-4 w-[60dvw] lg:w-[55dvw] lg:h-[40dvh] gap-2">
+              <div className="flex flex-col bg-freightCardBg bg-cover items-center lg:items-start border border-secondary rounded-lg p-4 w-[60dvw] lg:w-[55dvw] lg:h-[40dvh] gap-2">
                 <Image
                   src={"/globe.svg"}
                   alt={""}
@@ -121,7 +121,7 @@ const page = () => {
                   worldwide.
                 </p>
               </div>
-              <div className="flex flex-col bg-freightCardBg bg-cover h-full items-center lg:items-start border-2 border-secondary rounded-lg p-4 w-[60dvw] lg:h-[40dvh] gap-2">
+              <div className="flex flex-col bg-freightCardBg bg-cover h-full items-center lg:items-start border border-secondary rounded-lg p-4 w-[60dvw] lg:h-[40dvh] gap-2">
                 <Image
                   src={"/check.svg"}
                   alt={""}

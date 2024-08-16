@@ -7,17 +7,17 @@ export default function Home() {
   {
     icon: "/planeIcon.svg",
     name: "Air Freight",
-    link: "/Air-freight"
+    link: "/Air-Freight"
   },
   {
     icon: "/seaIcon.svg",
     name: "Sea Freight",
-    link:"/Sea-freight"
+    link:"/Sea-Freight"
   },
   {
     icon: "/roadIcon.svg",
     name: "Road Freight",
-    link:"/Road-freight"
+    link:"/Road-Freight"
   }
   ]
   const aboutData = [
