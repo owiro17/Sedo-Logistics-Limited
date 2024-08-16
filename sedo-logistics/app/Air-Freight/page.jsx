@@ -63,7 +63,7 @@ const page = () => {
             className="aspect-square absolute z-0"
           />
           <Image
-            src={"/PlanePicture.png"}
+            src={"/planePicture.png"}
             alt={""}
             width={280}
             height={350}

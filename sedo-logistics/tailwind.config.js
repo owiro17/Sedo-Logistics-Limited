@@ -19,7 +19,7 @@ export default {
         "aboutHeroBg":"url('/AboutHeroBg.svg')",
         "about-cardBg":"url('/about-cardBg.svg')",
         "airFreightBg": "url('/airfreightBg.svg')",
-        "freightCardBg": "url('/freightCardBg.svg')"
+        "freightCardBg": "url('/freightcardBg.svg')"
     
 
       },
