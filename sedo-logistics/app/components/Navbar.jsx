@@ -18,8 +18,8 @@ const Navbar = () => {
         <ul className='flex-row gap-12 hidden lg:flex'>
           <li className="font-manrope  hover:text-[#1790C5] font-normal  text-zinc-800  transition-all ease-in-out duration-100  "><Link href="/">Home</Link></li>
           <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 "><Link href="/About">About Us</Link></li>
-          <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 "><Link href="/services">Services</Link></li>
-          <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 "><Link href="/login">Login</Link></li>
+          <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 "><Link href="/">Services</Link></li>
+          <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 "><Link href="/Login">Login</Link></li>
 
         </ul>
 

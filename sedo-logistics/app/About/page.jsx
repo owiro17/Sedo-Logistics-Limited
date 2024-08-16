@@ -25,7 +25,7 @@ const page = () => {
       </section>
       {/* hero video s ection*/}
       <section>  
-      <video src="/Sedo-About.mp4" autoPlay loop muted></video>
+      <video src="/Sedo-About.mp4" className='mt-8' autoPlay loop muted></video>
       </section>
       {/* /welcome section */}
       <section className='flex flex-col lg:flex-row items-center justify-center '>
