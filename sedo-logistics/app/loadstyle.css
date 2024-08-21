@@ -19,7 +19,7 @@ svg text{
     align-items: center;
     justify-content: center;
     background-color: #C8E9F9;
-    position: relative;
+    position:absolute;
     z-index: 100;
 }
 .logo-body{
