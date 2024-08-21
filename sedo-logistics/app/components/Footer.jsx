@@ -40,11 +40,6 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/Rail-Freight" className="hover:text-[#1790C5] font-manrope font-normal text-black">
-                                    Rail Freight
-                                </Link>
-                            </li>
-                            <li>
                                 <Link href="/Sea-Freight" className="hover:text-[#1790C5] font-manrope font-normal text-black">
                                     Sea Freight
                                 </Link>
