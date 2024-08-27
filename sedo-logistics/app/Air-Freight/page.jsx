@@ -29,7 +29,7 @@ const page = () => {
         "A document outlining the goods being shipped, their value, and the terms of sale.",
     },
   ];
-  return (
+   return (
     <div>
       {/* hero section */}
       <section className="bg-airFreightBg bg-cover flex flex-col m-auto items-center justify-evenly gap-24 p-8 lg:flex-row lg:justify-evenly">
