@@ -33,10 +33,10 @@ const page = () => {
     <div>
       {/* hero section */}
       <section className="bg-airFreightBg bg-cover flex flex-col m-auto items-center justify-evenly gap-24 p-8 lg:flex-row lg:justify-evenly">
-        <div className="mt-10 flex flex-col bottom-10 relative lg:block lg:w-2/4 ">
+        <div className="mt-10 flex z-0 flex-col bottom-10 relative lg:block lg:w-2/4 ">
           <h1 className="heading text-center lg:text-left">
             {" "}
-            <span className="text-blue">Fast</span> Reliable{" "}
+            <span className="text-blue z-0">Fast</span> Reliable{" "}
             <span className="text-blue">
               {" "}
               <br />

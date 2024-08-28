@@ -8,7 +8,7 @@ const Navbar = () => {
   const menu = [
     { name: 'Home', icon: '/Home.svg', link: '/' },
     { name: 'About Us', icon: '/about.svg', link: '/About' },
-    { name: 'Services', icon: '/service.svg', link: '/services' },
+    { name: 'Services', icon: '/service.svg', link: '/' },
     { name: 'Login', icon: '/login.svg', link: '/Login' },
   ];
   return (
@@ -29,14 +29,14 @@ const Navbar = () => {
 
         {showMenu && (
           <>
-          <div className='absolute top-0 w-full bg-[#C8E9F9] p-5 h-[50%]'>
+          <div className='absolute z-10 top-0 w-full bg-[#C8E9F9] p-5 h-[50%]'>
             <div className='flex justify-between items-center border-b border-black pb-1'>
            <Link href="/"><Image src="/logo 3.png" alt="logo" width={150} height={150} className='cursor-pointer'/></Link> 
             <Image src="/close.svg" alt="menu" width={30} height={24} onClick={() => setShowMenu(!showMenu)} className='cursor-pointer' />
             </div>
           <ul className='flex-col pt-5 '>
             {menu.map((item, index) => (
-              <li key={index} className="font-open-sans text-lg flex items-center gap-4"><Image src={item.icon} alt={item.name} width={22} height={20} /><Link href={item.link}>{item.name}</Link></li>
+              <li key={index} className="font-open-sans text-lg flex items-center gap-4" onClick={() => setShowMenu(!showMenu)} ><Image src={item.icon} alt={item.name} width={22} height={20} /><Link href={item.link}>{item.name}</Link></li>
             ))}
           </ul>
           </div>
