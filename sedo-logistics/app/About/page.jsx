@@ -20,13 +20,13 @@ const page = () => {
   return (
     <div className='m-10'>
       {/* hero */}
-      <section className=' h-[30dvh] lg:h-[50dvh] bg-aboutHeroBg'>
+      <section className='  lg:h-[50dvh] bg-aboutHeroBg'>
         <h1 className='heading text-center mt-28 '>Your  <span className='text-blue'>Trusted Partner</span>  in <br /> Global Logistics <br /> Since 2010</h1>
         <Image src='/trophyIcon.svg' alt='trophy icon' width={40} height={40} className='m-auto mt-5' ></Image>
       </section>
       {/* hero video s ection*/}
       <section>  
-      <video src="/Sedo-About.mp4" className='mt-8'  webkit-playsinlin={1} playsinline={1}  autoPlay loop muted></video>
+      <video src="/Sedo-About.mp4 " className='relative top-10'  webkit-playsinlin={1} playsInline={1}  autoPlay loop muted></video>
       </section>
       {/* /welcome section */}
       <section className='flex flex-col lg:flex-row items-center justify-center '>
