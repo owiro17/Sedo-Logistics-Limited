@@ -49,7 +49,7 @@ const Navbar = () => {
 
       {showMenu && (
         <>
-          <div className="fixed shadow-sm top-0 z-50 bg-opacity-50 backdrop-blur-lg left-0 w-full h-screen overflow-scroll overflow-y-scroll bg-[#C8E9F9] p-5 ">
+          <div className="fixed shadow-sm top-0 z-50 backdrop-blur-lg left-0 w-full h-screen overflow-scroll overflow-y-scroll bg-[#C8E9F9] p-5 ">
             <div className="flex justify-between items-center  border-black pb-1">
               <Link href="/">
                 <Image
