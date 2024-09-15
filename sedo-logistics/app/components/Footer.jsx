@@ -19,11 +19,7 @@ const Footer = () => {
                                     About Us
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="/Dashboard" className="hover:text-[#1790C5] font-manrope font-normal text-black">
-                                    Dashboard
-                                </Link>
-                            </li>
+
                             <li>
                                 <Link href="/Login" className="hover:text-[#1790C5] font-manrope font-normal text-black">
                                     Login

@@ -136,7 +136,7 @@ const page = () => {
       {/* document section  */}
       <section className="mt-28 p-8">
         <h1 className="heading text-center lg:text-left">
-          Understanding Air Freight <br />{" "}
+          Understanding Sea Freight <br />{" "}
           <span className="text-blue">Documentation</span>{" "}
         </h1>
         <div className="bg-[#9ec5d4] flex flex-col flex-wrap items-center justify-center gap-8 lg:flex-row bg-opacity-10 mt-8 p-8">

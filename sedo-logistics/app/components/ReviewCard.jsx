@@ -3,7 +3,7 @@ import Image from 'next/image'
 const ReviewCard = () => {
     const UserDetails = [
         { name: 'John Owiro', profile: '/person1.jpg', comment: 'Being the founder and a regular user of this website my business has grown and has allowed to keep track of my expenses in shipments and has helped me organize my resources well ',role:'Director' },
-        { name: 'Mohammed Subash', profile: '/person 2.jpg', comment: 'I have been using Sedo Logistics Limited for my shipping and they have increased our productivity and organization of data and enabled us to see the future ',role:'Head of Operations' }
+        { name: 'Peter Alfred', profile: '/person 2.jpg', comment: 'I have been using Sedo Logistics Limited for my shipping and they have increased our productivity and organization of data and enabled us to see the future ',role:'Head of Operations' }
     ]
     return (
         <div className="flex flex-col lg:flex-row items-center m-auto lg:px-10 py-10 gap-20">
