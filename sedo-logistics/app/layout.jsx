@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       <meta property="og:url" content="https://www.sedologistics.co.ke/" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
-      <body  className={`${manrope.variable} ${raleway.variable}  lg:w-[100%] relative
+      <body  className={`${manrope.variable} ${raleway.variable}  lg:w-[80%] relative
       top-20 m-auto`}>
 
         <Navbar />
