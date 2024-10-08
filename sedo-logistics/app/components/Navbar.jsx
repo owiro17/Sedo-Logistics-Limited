@@ -15,17 +15,18 @@ const Navbar = () => {
   ];
   return (
     <>
-      <nav className="flex z-50 top-0 w-full lg:px-24 mb-20 bg- fixed left-0 flew-row justify-between items-center p-5 ">
+      <nav className="flex z-50  top-0 w-full  lg:px-24 mb-20 bg-[#E1F2F3]   fixed left-0 flew-row justify-between bg-opacity-90   items-center p-5 ">
+        {/* <div className="w-full z-30  fixed left-0 top-0 bg-black  blur-xl h-[65px]"></div> */}
         <Link href="/">
           <Image
             src="/logo 3.png"
             alt="logo"
             width={150}
             height={150}
-            className="cursor-pointer"
+            className="cursor-pointer   z-40"
           />
         </Link>
-        <ul className="flex-row gap-12 hidden lg:flex">
+        <ul className="flex-row gap-12  z-40 hidden lg:flex">
           <li className="font-manrope  hover:text-[#1790C5] font-normal  text-zinc-800  transition-all ease-in-out duration-100  ">
             <Link href="/">Home</Link>
           </li>

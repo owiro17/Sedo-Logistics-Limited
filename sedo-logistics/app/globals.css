@@ -31,6 +31,19 @@ body {
   .bg-hero {
       background: linear-gradient(145deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
   }
+  .dash-bg{
+    border-radius: 50px;
+    background: #ECEFF0;
+    box-shadow:  20px 20px 44px #d4d7d8,
+             -20px -20px 44px #ffffff;
+            
+  }
+  .about-section{
+    border-radius: 50px;
+    background: #ECEFF0;
+    box-shadow:  20px 20px 44px #d4d7d8,
+             -20px -20px 44px #ffffff;
+  }
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .bg-hero {
       -webkit-backdrop-filter: blur(24px);

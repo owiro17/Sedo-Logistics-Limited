@@ -62,14 +62,14 @@ export default function Home() {
         <div className="w-[100%]  bg-hero  h-[89dvh] absolute  z-20  blur-xl">
 
         </div>
-        <div className="  z-10 m-auto lg:w-[75%]  py-20  flex flex-col md:items-center gap-2 justify-center p-8  ">
+        <section className="  z-10 m-auto lg:w-[75%]  py-20 mb-16   flex flex-col md:items-center gap-2 justify-center p-8  ">
 
           <h1 className="heading z-30 mt-10 lg:text-[45px] text-center ">Reliable <span className="text-blue">Logistics </span>Solutions <br></br> for Your <span className="text-blue">Business</span> </h1>
           <p className="paragraph z-30  text-center md:text-center lg:text-center ">Welcome to <span className="text-blue">Sedo Logistics Limited</span>  , your trusted partner in logistics and supply chain management. We offer efficient, cost-effective solutions to meet your transportation needs..</p>
           <Link href="#contact-us" className="btn-custom z-30 m-auto mt-6 " style={{scrollBehavior: 'smooth'}}>Get Started</Link>
-        </div>
+        </section>
       {/* dashboard section */}
-      <section className="flex relative top-10  z-20 flex-col lg:flex-row bg-triangleBg justify-evenly align-middle gap-[60px] p-[48px] py-20 rounded-lg">
+      <section className="flex relative top-32 mb-16  z-20 flex-col lg:flex-row dash-bg justify-evenly align-middle gap-[60px] p-[48px] py- rounded-lg">
 
         <div className="">
           <div className=" border-black">
@@ -85,7 +85,7 @@ export default function Home() {
 
       
       {/* about section */}
-      <section className=" flex top-10 relative flex-col items-center lg:top-40 gap-8 ">
+      <section className=" flex top-24 relative flex-col items-center lg:top-40 gap-8 ">
 
         <div className="pb-[48px] flex flex-col lg:z-10  relative top-10 lg:top-0 lg:flex-row gap-8 lg:gap-16">
           {ServiceCard.map((card,index) => (
@@ -98,7 +98,7 @@ export default function Home() {
 
         </div>
 
-        <div className="bg-aboutBg bg-cover bg-no-repeat w-full rounded-lg  px-8 py-10  lg:pt-[140px] lg:bottom-[190px] lg:relative   lg:z-0  flex flex-col items-center ">
+        <div className=" about-section bg-cover bg-no-repeat w-full rounded-lg  px-8 py-10  lg:pt-[140px] lg:bottom-[190px] lg:relative   lg:z-0  flex flex-col items-center ">
           <h1 className="  heading text-center lg:mt-10 ">Leading Logistics Company</h1>
           <div className="lg:flex gap-6">
             {
