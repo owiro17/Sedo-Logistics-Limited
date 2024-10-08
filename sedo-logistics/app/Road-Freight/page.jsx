@@ -1,6 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+export const metadata = {
+  title: "Road Freight Services - Sedo Logistics",
+  description: "Reliable and efficient road freight solutions by Sedo Logistics. We ensure safe and timely delivery of goods across domestic and regional routes.",
+  keywords: ["Road Freight", "Logistics", "Shipping", "Domestic Shipping", "Cargo Transportation"],
+  author: "Sedo Logistics",
+  openGraph: {
+    title: "Road Freight Services - Sedo Logistics",
+    description: "Reliable and efficient road freight solutions by Sedo Logistics. We ensure safe and timely delivery of goods across domestic and regional routes.",
+    url: "https://www.sedologistics.co.ke/Road-Freight",
+    images: [
+      {
+        url: "/logo 3.png",
+        width: 800,
+        height: 600,
+        alt: "Sedo Logistics Logo",
+      },
+    ],
+  },
+};
+
 const page = () => {
   const documentData = [
     {

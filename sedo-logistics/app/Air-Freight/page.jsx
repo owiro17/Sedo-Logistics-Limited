@@ -1,6 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+export const metadata = {
+  title: "Air Freight Services - Sedo Logistics",
+  description: "Fast and reliable air freight solutions by Sedo Logistics. We ensure your cargo reaches its destination quickly and safely, whether within Kenya or internationally.",
+  keywords: ["Air Freight", "Logistics", "Shipping", "International Shipping", "Cargo Transportation","shipping in kenya"],
+  author: "Sedo Logistics",
+  openGraph: {
+    title: "Air Freight Services - Sedo Logistics",
+    description: "Fast and reliable air freight solutions by Sedo Logistics. We ensure your cargo reaches its destination quickly and safely, whether within Kenya or internationally.",
+    url: "https://www.sedologistics.co.ke/Air-Freight",
+    images: [
+      {
+        url: "/logo 3.png",
+        width: 800,
+        height: 600,
+        alt: "Sedo Logistics Logo",
+      },
+    ],
+  },
+};
+
 const page = () => {
   const documentData = [
     {

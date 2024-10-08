@@ -2,6 +2,26 @@ import React from "react";
 import Image from "next/image";
 import ReviewCard from "./components/ReviewCard";
 import Link from "next/link";
+export const metadata = {
+  title: "Home - Sedo Logistics",
+  description: "Welcome to Sedo Logistics. We provide efficient and reliable logistics solutions including air, sea, and road freight services.",
+  keywords: ["Logistics", "Air Freight", "Sea Freight", "Road Freight", "Shipping", "Cargo Transportation"],
+  author: "Sedo Logistics",
+  openGraph: {
+    title: "Home - Sedo Logistics",
+    description: "Welcome to Sedo Logistics. We provide efficient and reliable logistics solutions including air, sea, and road freight services.",
+    url: "https://www.sedologistics.co.ke",
+    images: [
+      {
+        url: "/logo 3.png",
+        width: 800,
+        height: 600,
+        alt: "Sedo Logistics Logo",
+      },
+    ],
+  },
+};
+
 export default function Home() {
   const ServiceCard = [
   {

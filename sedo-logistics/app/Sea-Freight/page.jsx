@@ -1,6 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+export const metadata = {
+  title: "Sea Freight Services - Sedo Logistics",
+  description: "Efficient and reliable sea freight solutions by Sedo Logistics. We ensure safe and timely delivery of goods across international waters.",
+  keywords: ["Sea Freight", "Logistics", "Shipping", "International Shipping", "Cargo Transportation"],
+  author: "Sedo Logistics",
+  openGraph: {
+    title: "Sea Freight Services - Sedo Logistics",
+    description: "Efficient and reliable sea freight solutions by Sedo Logistics. We ensure safe and timely delivery of goods across international waters.",
+    url: "https://www.sedologistics.co.ke/Sea-Freight",
+    images: [
+      {
+        url: "/logo 3.png",
+        width: 800,
+        height: 600,
+        alt: "Sedo Logistics Logo",
+      },
+    ],
+  },
+};
+
 const page = () => {
   const documentData = [
     {
@@ -34,11 +54,15 @@ const page = () => {
       {/* hero section */}
       <section className="bg-airFreightBg bg-cover flex flex-col m-auto items-center justify-evenly gap-24 p-8 lg:flex-row lg:justify-evenly">
         <div className="mt-10 flex flex-col bottom-10 relative lg:block lg:w-2/4 ">
-          <h1 className="heading text-center lg:text-left">     
-            <span className="text-blue">Efficient</span> Sea Freight <span className="text-blue">Solutions</span>
+          <h1 className="heading text-center lg:text-left">
+            <span className="text-blue">Efficient</span> Sea Freight{" "}
+            <span className="text-blue">Solutions</span>
           </h1>
           <p className="paragraph my-4 text-center lg:text-left text-wrap  ">
-          Sedo Logistics provides reliable and cost-effective sea freight services, ensuring safe and timely delivery of goods across international waters. With an extensive network and expertise, they handle cargo transportation efficiently to any destination
+            Sedo Logistics provides reliable and cost-effective sea freight
+            services, ensuring safe and timely delivery of goods across
+            international waters. With an extensive network and expertise, they
+            handle cargo transportation efficiently to any destination
           </p>
           <Link className="btn-custom w-auto m-auto" href="/Contact">
             Get Quote
@@ -64,19 +88,22 @@ const page = () => {
       {/* Why choose us  */}
       <section className="mt-28 p-8">
         <h1 className="heading text-center lg:text-left">
-        Why <span className="text-blue">Sedo Logistics</span>  Is Your Best Choice for Sea Freight
+          Why <span className="text-blue">Sedo Logistics</span> Is Your Best
+          Choice for Sea Freight
         </h1>
         <h4 className="font-manrope  text-center  my-2 lg:text-left text-gray-500">
-        Comprehensive Air Freight Solutions
+          Comprehensive Sea Freight Solutions
         </h4>
 
         <div className="flex flex-col item-center gap-8 lg:flex-row">
           <div className="lg:w-[60%]">
             <p className="paragraph text-center text-wrap lg:text-left">
-            At Sedo Logistics, we offer tailored air freight services to meet your specific shipping needs. Our global network and expertise ensure efficient, cost-effective transportation solutions for your cargo.
+              We understand that every shipment is unique. At Sedo Logistics, we
+              tailor our sea freight services to meet your specific needs,
+              whether you&apos;re shipping large volumes or smaller consignments.
             </p>
             <div className="flex flex-col  lg:flex-row  gap-4 items-center justify-center mt-4">
-              <div className="flex bg-freightCardBg bg-cover flex-col items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[45dvh] gap-2">
+              <div className="flex bg-freightCardBg bg-cover flex-col items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[55dvh] gap-2">
                 <Image
                   src={"/speed.svg"}
                   alt={""}
@@ -85,13 +112,14 @@ const page = () => {
                   className=" "
                 />
                 <h4 className="font-raleway text-secondary font-bold text-xl">
-                Flexibility
+                  Flexibility
                 </h4>
                 <p className="paragraph text-wrap text-center lg:text-left">
-                Options for full container load (FCL) and less than container load (LCL) shipments.
+                  Options for full container load (FCL) and less than container
+                  load (LCL) shipments.
                 </p>
               </div>
-              <div className="flex flex-col bg-freightCardBg bg-cover items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:w-[65dvw] lg:h-[45dvh] gap-2">
+              <div className="flex flex-col bg-freightCardBg bg-cover items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:w-[65dvw] lg:h-[55dvh] gap-2">
                 <Image
                   src={"/globe.svg"}
                   alt={""}
@@ -103,10 +131,11 @@ const page = () => {
                   Global Network
                 </h4>
                 <p className="paragraph text-center lg:text-left text-wrap ">
-                Access to major sea ports worldwide, ensuring your cargo reaches its destination efficiently.
+                  Access to major sea ports worldwide, ensuring your cargo
+                  reaches its destination efficiently.
                 </p>
               </div>
-              <div className="flex flex-col bg-freightCardBg bg-cover h-full items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[45dvh] gap-2">
+              <div className="flex flex-col bg-freightCardBg bg-cover h-full items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[55dvh] gap-2">
                 <Image
                   src={"/check.svg"}
                   alt={""}
@@ -118,7 +147,7 @@ const page = () => {
                   Reliability
                 </h4>
                 <p className="paragraph text-wrap text-center lg:text-left">
-                Trusted services with regular sailings and on-time delivery.
+                  Trusted services with regular sailings and on-time delivery.
                 </p>
               </div>
             </div>
@@ -157,12 +186,12 @@ const page = () => {
       {/* shipping process */}
       <section className="mt-28 p-8">
         <h1 className="heading text-center lg:text-left">
-          <span className="text-blue">Step-by-Step</span> Sea Freight <br /> Shipping
+          <span className="text-blue">Step-by-Step</span> Sea Freight <br />{" "}
+          Shipping
         </h1>
         <div className="mt-8 flex flex-col items-center justify-evenly lg:flex-row flex-wrap gap-8">
           {/* row 1 */}
           <div className="flex flex-col lg:flex-row gap-9 ">
-
             <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
               <h3 className="font-raleway font-bold text-xl text-secondary">
                 Step 1.
@@ -227,62 +256,60 @@ const page = () => {
           />
           {/* row 2  */}
           <div className="flex flex-col lg:flex-row lg:mt-10 gap-9">
-          <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
-            <h3 className="font-raleway font-bold text-xl text-secondary">
-              Step 4.
-            </h3>
-            <p>Sea Transport</p>
+            <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
+              <h3 className="font-raleway font-bold text-xl text-secondary">
+                Step 4.
+              </h3>
+              <p>Sea Transport</p>
+              <Image
+                src={"/darkSeaIcon.svg"}
+                alt={""}
+                width={30}
+                height={40}
+                className=" "
+              />
+            </div>
             <Image
-              src={"/darkSeaIcon.svg"}
+              src={"/dots.svg"}
               alt={""}
-              width={30}
+              width={60}
               height={40}
-              className=" "
+              className="rotate-90 lg:rotate-0 m-auto"
             />
-          </div>
-          <Image
-            src={"/dots.svg"}
-            alt={""}
-            width={60}
-            height={40}
-            className="rotate-90 lg:rotate-0 m-auto"
-          />
-          <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
-            <h3 className="font-raleway font-bold text-xl text-secondary">
-              Step 5.
-            </h3>
-            <p>Delivery</p>
+            <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
+              <h3 className="font-raleway font-bold text-xl text-secondary">
+                Step 5.
+              </h3>
+              <p>Delivery</p>
+              <Image
+                src={"/trolly.svg"}
+                alt={""}
+                width={30}
+                height={40}
+                className=" "
+              />
+            </div>
             <Image
-              src={"/trolly.svg"}
+              src={"/dots.svg"}
               alt={""}
-              width={30}
+              width={60}
               height={40}
-              className=" "
+              className="rotate-90 lg:rotate-0 m-auto"
             />
+            <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
+              <h3 className="font-raleway font-bold text-xl text-secondary">
+                Step 6.
+              </h3>
+              <p>Get Invoice</p>
+              <Image
+                src={"/invoice.svg"}
+                alt={""}
+                width={23}
+                height={40}
+                className=" "
+              />
+            </div>
           </div>
-          <Image
-            src={"/dots.svg"}
-            alt={""}
-            width={60}
-            height={40}
-            className="rotate-90 lg:rotate-0 m-auto"
-          />
-          <div className="rounded-full flex flex-col gap-2 items-center justify-center bg-[#C8E9F9] m-auto w-[169px] h-[169px] p-2">
-            <h3 className="font-raleway font-bold text-xl text-secondary">
-              Step 6.
-            </h3>
-            <p>Get Invoice</p>
-            <Image
-              src={"/invoice.svg"}
-              alt={""}
-              width={23}
-              height={40}
-              className=" "
-            />
-          </div>
-            
-          </div>
-
         </div>
       </section>
     </div>
