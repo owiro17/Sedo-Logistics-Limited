@@ -6,6 +6,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const[showServices, setShowServices] = useState(false);
 
   const menu = [
     { name: "Home", icon: "/Home.svg", link: "/" },
@@ -14,7 +15,7 @@ const Navbar = () => {
   ];
   return (
     <>
-      <nav className="flex z-50 top-0 w-full lg:px-24 mb-20  fixed left-0 flew-row bg-[#C8E9F9] justify-between items-center p-5 ">
+      <nav className="flex z-50 top-0 w-full lg:px-24 mb-20 bg- fixed left-0 flew-row justify-between items-center p-5 ">
         <Link href="/">
           <Image
             src="/logo 3.png"
@@ -31,6 +32,54 @@ const Navbar = () => {
           <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 ">
             <Link href="/About">About Us</Link>
           </li>
+          <li
+            onClick={() => setShowServices(!showServices)}
+            className="font-manrope inline-flex gap-2 hover:text-[#1790C5] hover: font-normal text-zinc-800  transition-all ease-in-out duration-100 cursor-pointer "
+          >
+            Services <img src="/arrow-bottom.svg" className="w-4" alt="" />
+          </li>
+          {showServices && (
+            <div className="w-[200px] h-[155px] absolute right-10 top-14 bg-white rounded-lg mt-4 shadow-lg mr-10 p-5 ">
+              <ul className="flex flex-col gap-2">
+                <li className="flex flex-row gap-2">
+                  <img className="w-5" src="/planeIcon.svg" alt="plane logo" />
+                  <a
+                    className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100"
+                    href="/Air-Freight"
+                  >
+                    Air Freight
+                  </a>
+                </li>
+                <li className="flex flex-row gap-2">
+                  <img className="w-5" src="/seaIcon.svg" alt=" sea logo" />
+                  <a
+                    className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100"
+                    href="/Sea-Freight"
+                  >
+                    Sea Freight
+                  </a>
+                </li>
+                <li className="flex flex-row gap-2">
+                  <img className="w-5" src="/roadIcon.svg" alt="" />
+                  <a
+                    className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100"
+                    href="/Road-Freight"
+                  >
+                    Road Freight
+                  </a>
+                </li>
+                <li className="flex flex-row gap-2">
+                  <img className="w-5" src="/dashboardIcon.svg" alt="" />
+                  <a
+                    className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100"
+                    href="/Dashboard"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
 
           <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 ">
             <Link href="/Login">Login</Link>

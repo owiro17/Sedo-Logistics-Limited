@@ -6,8 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --primary-color:#009AD6;
-  --secondary-color:#004661;
+  --primary-color: #009ad6;
+  --secondary-color: #004661;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,21 +15,27 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-
   }
 }
-/* *{
-  border:1px solid red  ;
-} */
 
 body {
-background-color: #ECEFF0;
-
+  background-color: #eceff0;
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    /* text-wrap: balance; */ /* This line is causing the error */
+    overflow-wrap: break-word; /* Use this instead */
+  }
+
+  .bg-hero {
+      background: linear-gradient(145deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .bg-hero {
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+    }
   }
 }
 
@@ -37,16 +43,15 @@ background-color: #ECEFF0;
   .btn-custom {
     @apply bg-[#009AD6] hover:bg-[#004661] transition-all duration-300 text-white font-light font-raleway py-2 px-4 rounded;
   }
-  .paragraph{
-    @apply  lg:text-base text-primary font-thin;
+  .paragraph {
+    @apply lg:text-base text-primary font-thin;
   }
-  .text-blue{
+  .text-blue {
     @apply text-[#009AD6];
   }
-  .heading{
-    @apply text-4xl lg:text-[45px] ;
+  .heading {
+    @apply text-4xl lg:text-[45px];
   }
-
 }
 
 .text-primary {
@@ -56,39 +61,39 @@ background-color: #ECEFF0;
 .text-secondary {
   color: var(--secondary-color);
 }
-.heading{
+.heading {
   /* font-size: clamp(1.9rem, 2vw, 5rem); */
   font-weight: 900;
   line-height: 1.2;
   color: var(--secondary-color);
   font-family: var(--font-raleway), sans-serif;
-  text-wrap: balance;
-
-
+  /* text-wrap: balance; */ /* This line is causing the error */
+  overflow-wrap: break-word; /* Use this instead */
 }
-.small-heading{
+.small-heading {
   font-size: clamp(1.3rem, 2vw, 5rem);
   font-weight: 900;
   line-height: 1.2;
   color: var(--secondary-color);
   font-family: var(--font-raleway), sans-serif;
 }
-.paragraph,p{
+.paragraph,
+p {
   /* font-size: clamp(1rem, 1.5vw, 1.5rem); */
   font-weight: 300;
   color: #000000;
   font-family: var(--font-manrope), sans-serif;
-  text-wrap: balance;
+  /* text-wrap: balance; */ /* This line is causing the error */
+  overflow-wrap: break-word; /* Use this instead */
   letter-spacing: 0.3px;
-
 }
-input{
+input {
   font-weight: 400;
   color: #000000;
   font-family: var(--font-open-sans), sans-serif;
 }
 
-li{
+li {
   font-family: var(--font-open-sans), sans-serif;
   font-weight: 300;
 }

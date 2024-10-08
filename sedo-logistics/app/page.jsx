@@ -59,19 +59,24 @@ export default function Home() {
 // ]
   return (
     <main className="">
-        <div className="bg-hero-page  lg:w-auto m-auto  py-20  flex flex-col md:items-center gap-2 justify-center p-8  ">
-          <h1 className="heading  mt-10 lg:text-[45px] text-center ">Reliable <span className="text-blue">Logistics </span>Solutions <br></br> for Your <span className="text-blue">Business</span> </h1>
-          <p className="paragraph  text-center md:text-center lg:text-center ">Welcome to <span className="text-blue">Sedo Logistics Limited</span>  , your trusted partner in logistics and supply chain management. We offer efficient, cost-effective solutions to meet your transportation needs..</p>
-          <Link href="#contact-us" className="btn-custom m-auto mt-6 " style={{scrollBehavior: 'smooth'}}>Get Started</Link>
+        <div className="w-[100%]  bg-hero  h-[89dvh] absolute  z-20  blur-xl">
+
+        </div>
+        <div className="  z-10 m-auto lg:w-[75%]  py-20  flex flex-col md:items-center gap-2 justify-center p-8  ">
+
+          <h1 className="heading z-30 mt-10 lg:text-[45px] text-center ">Reliable <span className="text-blue">Logistics </span>Solutions <br></br> for Your <span className="text-blue">Business</span> </h1>
+          <p className="paragraph z-30  text-center md:text-center lg:text-center ">Welcome to <span className="text-blue">Sedo Logistics Limited</span>  , your trusted partner in logistics and supply chain management. We offer efficient, cost-effective solutions to meet your transportation needs..</p>
+          <Link href="#contact-us" className="btn-custom z-30 m-auto mt-6 " style={{scrollBehavior: 'smooth'}}>Get Started</Link>
         </div>
       {/* dashboard section */}
-      <section className="flex flex-col lg:flex-row bg-triangleBg justify-evenly align-middle gap-[60px] p-[48px] py-20 rounded-lg">
+      <section className="flex relative top-10  z-20 flex-col lg:flex-row bg-triangleBg justify-evenly align-middle gap-[60px] p-[48px] py-20 rounded-lg">
+
         <div className="">
           <div className=" border-black">
           <Image className="rounded-lg shadow-lg" src="/dashboardPic.png" alt="dashboard sample"   width={1000} height={500} />
           </div>
         </div>
-        <div className="flex flex-col  gap-10 items-start ">
+        <div className="flex flex-col   gap-10 items-start ">
           <h1 className="heading m-auto text-center lg:text-left lg:m-0  lg:text-4xl">Track <span className="text-blue">Shipping</span>  Expenses <br /> on Your Dashboard</h1>
           <p className="paragraph text-center lg:text-left">Use our tracking system to monitor the status of your shipments in real-time and monitor your shipping costs using our interactive and easy to use dashboard.</p>
           <Link href="" className="btn-custom m-auto lg:m-0 ">Dashboard</Link>
@@ -80,7 +85,7 @@ export default function Home() {
 
       
       {/* about section */}
-      <section className=" flex relative flex-col items-center lg:top-40 gap-8 ">
+      <section className=" flex top-10 relative flex-col items-center lg:top-40 gap-8 ">
 
         <div className="pb-[48px] flex flex-col lg:z-10  relative top-10 lg:top-0 lg:flex-row gap-8 lg:gap-16">
           {ServiceCard.map((card,index) => (
