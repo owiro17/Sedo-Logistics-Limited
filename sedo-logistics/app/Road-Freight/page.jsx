@@ -97,7 +97,7 @@ const page = () => {
             At Sedo Logistics, we understand that every shipment is unique. We customize our road freight services to fit your specific requirements, whether you’re moving goods across town or across borders.
             </p>
             <div className="flex flex-col  lg:flex-row  gap-4 items-center justify-center mt-4">
-              <div className="flex bg-freightCardBg bg-cover flex-col items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[45dvh] gap-2">
+              <div className="flex bg-freightCardBg bg-cover flex-col items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[55dvh] gap-2">
                 <Image
                   src={"/speed.svg"}
                   alt={""}
@@ -112,7 +112,7 @@ const page = () => {
                 Efficient transportation with flexible scheduling to meet tight deadlines.
                 </p>
               </div>
-              <div className="flex flex-col bg-freightCardBg bg-cover items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:w-[65dvw] lg:h-[45dvh] gap-2">
+              <div className="flex flex-col bg-freightCardBg bg-cover items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:w-[65dvw] lg:h-[55dvh] gap-2">
                 <Image
                   src={"/globe.svg"}
                   alt={""}
@@ -127,7 +127,7 @@ const page = () => {
                 Extensive network ensuring reliable deliveries across Kenya and neighboring countries.
                 </p>
               </div>
-              <div className="flex flex-col bg-freightCardBg bg-cover h-full items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[45dvh] gap-2">
+              <div className="flex flex-col bg-freightCardBg bg-cover h-full items-center lg:items-start border border-secondary rounded-lg p-4 w-[65dvw] lg:h-[55dvh] gap-2">
                 <Image
                   src={"/check.svg"}
                   alt={""}
