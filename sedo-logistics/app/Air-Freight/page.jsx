@@ -192,7 +192,7 @@ const page = () => {
       {/* shipping process */}
       <section className="mt-28 p-8">
         <h1 className="heading text-center lg:text-left">
-          <span className="text-blue">Step-by-Step</span> Sea Freight <br /> Shipping
+          <span className="text-blue">Step-by-Step</span> Air Freight <br /> Shipping
         </h1>
         <div className="mt-8 flex flex-col items-center justify-evenly lg:flex-row flex-wrap gap-8">
           {/* row 1 */}

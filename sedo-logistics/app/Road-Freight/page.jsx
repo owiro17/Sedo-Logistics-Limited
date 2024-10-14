@@ -24,7 +24,7 @@ export const metadata = {
 const page = () => {
   const documentData = [
     {
-      heading: "Bill of Lading (BOL)",
+      heading: "Road consignment (RCN)",
       description:
         "A legal document between the shipper and carrier detailing the type, quantity, and destination of the goods being shipped.",
     },
@@ -157,7 +157,7 @@ const page = () => {
       {/* document section  */}
       <section className="mt-28 p-8">
         <h1 className="heading text-center lg:text-left">
-          Understanding Air Freight <br />{" "}
+          Understanding Road Freight <br />{" "}
           <span className="text-blue">Documentation</span>{" "}
         </h1>
         <div className="bg-[#9ec5d4] flex flex-col flex-wrap items-center justify-center gap-8 lg:flex-row bg-opacity-10 mt-8 p-8">
@@ -178,7 +178,7 @@ const page = () => {
       {/* shipping process */}
       <section className="mt-28 p-8">
         <h1 className="heading text-center lg:text-left">
-          <span className="text-blue">Step-by-Step</span> Sea Freight <br /> Shipping
+          <span className="text-blue">Step-by-Step</span> Road Freight <br /> Shipping
         </h1>
         <div className="mt-8 flex flex-col items-center justify-evenly lg:flex-row flex-wrap gap-8">
           {/* row 1 */}
