@@ -1,25 +1,25 @@
 "use client";
-import React, { useState, useEffect } from "react"; // Added useEffect
+import React, { useState,} from "react"; // Added useEffect
 import Image from "next/image";
 import Link from "next/link";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [showServices, setShowServices] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 }); // New state for cursor position
+  // const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 }); // New state for cursor position
 
   // Effect to track mouse movement
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setCursorPosition({ x: event.clientX, y: event.clientY }); // Update cursor position
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     setCursorPosition({ x: event.clientX, y: event.clientY }); // Update cursor position
+  //   };
 
-    window.addEventListener("mousemove", handleMouseMove); // Add event listener
+  //   window.addEventListener("mousemove", handleMouseMove); // Add event listener
 
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove); // Cleanup on unmount
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("mousemove", handleMouseMove); // Cleanup on unmount
+  //   };
+  // }, []);
 
   const menu = [
     { name: "Home", icon: "/Home.svg", link: "/" },

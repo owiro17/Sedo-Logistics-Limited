@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const ShipmentsTable = () => {
   const shipments = [
     {
@@ -15,7 +15,24 @@ const ShipmentsTable = () => {
       status: "Delivered",
       dateCreated: "02/08/2024",
     },
-
+    {
+      refNo: 3,
+      details: "100pc Comesa Pads",
+      status: "Delivered",
+      dateCreated: "02/08/2024",
+    },
+    {
+      refNo: 2,
+      details: "100pc Comesa Pads",
+      status: "Delivered",
+      dateCreated: "02/08/2024",
+    },
+    {
+      refNo: 2,
+      details: "100pc Comesa Pads",
+      status: "Delivered",
+      dateCreated: "02/08/2024",
+    },
   ];
 
   return (
@@ -47,7 +64,7 @@ const ShipmentsTable = () => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {shipments.map((shipment) => (
+          {shipments.slice(0, 3).map((shipment) => (
             <tr key={shipment.refNo}>
               <td className="px-4 py-2 text-sm text-gray-900">
                 {shipment.refNo}
@@ -68,9 +85,15 @@ const ShipmentsTable = () => {
                 {shipment.dateCreated}
               </td>
               <td className="px-4 py-2">
-                <button className="text-sm text-white px-3 ease-in-out duration-200 py-2 bg-primary hover:bg-secondary rounded-md hover:text-white">
-                  View
-                </button>
+                <Link
+                  href={`/Dashboard/Shipment/${encodeURIComponent(
+                    shipment.refNo
+                  )}/`}
+                >
+                  <button className="text-sm text-white px-3 ease-in-out duration-200 py-2 bg-primary hover:bg-secondary rounded-md hover:text-white">
+                    View
+                  </button>
+                </Link>
               </td>
             </tr>
           ))}

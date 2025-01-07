@@ -9,7 +9,7 @@ import SideNavbar from './../components/SideNavbar';
 const page = () => {
   return (
     <>
-      <main className=" p-8 flex-col lg:w-[88dvw] flex lg:flex-row ">
+      <main className=" p-8 flex-col lg:w-[89dvw] flex lg:flex-row ">
         {/* right navbar section  */}
         <SideNavbar></SideNavbar>
         {/* Main section  */}
