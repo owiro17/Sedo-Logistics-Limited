@@ -1,3 +1,4 @@
+
 import React from "react";
 import Link from "next/link";
 const ShipmentsTable = () => {
@@ -85,7 +86,8 @@ const ShipmentsTable = () => {
                 {shipment.dateCreated}
               </td>
               <td className="px-4 py-2">
-                <Link
+              <Link
+                  passHref
                   href={`/Dashboard/Shipment/${encodeURIComponent(
                     shipment.refNo
                   )}/`}
@@ -99,6 +101,10 @@ const ShipmentsTable = () => {
           ))}
         </tbody>
       </table>
+      <div className="w-full flex justify-end px-4">
+
+      </div>
+
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Page({ params }) {
+  // eslint-disable-next-line no-unused-vars
   const { refNo, slug } = params;
   const shipmentStatus = [
     { status: "Documentation" },
