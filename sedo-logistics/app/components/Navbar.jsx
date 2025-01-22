@@ -24,7 +24,7 @@ const Navbar = () => {
   const menu = [
     { name: "Home", icon: "/Home.svg", link: "/" },
     { name: "About Us", icon: "/about.svg", link: "/About" },
-    { name: "Login", icon: "/login.svg", link: "/Login" },
+    { name: "Sign-in", icon: "/login.svg", link: "/Sign-in" },
   ];
   return (
     <>
@@ -98,7 +98,7 @@ const Navbar = () => {
           )}
 
           <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 ">
-            <Link href="/Login">Login</Link>
+            <Link href="/Sign-in">Sign-in</Link>
           </li>
         </ul>
 
