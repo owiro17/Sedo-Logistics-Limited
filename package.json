@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/json5": "^2.2.0"
+  },
+  "dependencies": {
+    "mongoose": "^8.9.5"
   }
 }

@@ -79,7 +79,7 @@ export default function Home() {
 // ]
   return (
     <main className="">
-        <div className="w-[100%]  bg-hero  h-[89dvh] absolute  z-20  blur-xl">
+        <div className="w-[90%]  bg-hero  h-[89dvh] absolute  z-20  blur-xl">
 
         </div>
         <section className="  z-10 m-auto lg:w-[75%]  py-20 mb-16   flex flex-col md:items-center gap-2 justify-center p-8  ">

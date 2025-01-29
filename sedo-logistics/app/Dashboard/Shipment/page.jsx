@@ -100,7 +100,7 @@ const page = () => {
               </tr>
             ))}
           </tbody>
-          <Link href={`/Dashboard/Shipment/`}></Link>
+
         </table>
       </div>
     </div>
