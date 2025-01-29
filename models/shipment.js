@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import {Schema,mongoose} from 'mongoose';
 //  create a schema
-const shipmentSchema = new mongoose.Schema({
+const shipmentSchema = new Schema({
   consignee: {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },

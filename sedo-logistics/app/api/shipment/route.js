@@ -1,5 +1,5 @@
 import connectToDatabase from "../../../../libs/mongodb";
-import shipment from "../../../../models/shipment";
+import Shipment from "../../../../models/shipment";
 import { NextResponse } from "next/server";
 
 export async function POST(Request) {
@@ -10,7 +10,7 @@ export async function POST(Request) {
         return new NextResponse("Shipment data is required", { status: 400 });
     }
     try {
-        await shipment.create({ ...ShipmentData, createdAt: new Date() });
+        await Shipment.create({ ...ShipmentData, createdAt: new Date() });
     } catch (error) {
         console.log(error);
         return new NextResponse("Error creating shipment", { status: 500 });
