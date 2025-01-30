@@ -1,18 +1,34 @@
-'use client'
+// 'use client'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ShipmentsTable from '../components/ShipmentsTable'
 import SideNavbar from './../components/SideNavbar';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
+import { currentUser } from '@clerk/nextjs/server'
 
-const page = () => {
+export default async function page () {
+  const user = await currentUser();
+  const { imageUrl,firstName,lastName,emailAddresses } = user
+  console.log(user)
+  const params = new URLSearchParams()
+
+  params.set('height', '200')
+  params.set('width', '200')
+  params.set('quality', '100')
+  params.set('fit', 'crop')
+
+  const imageSrc = `${imageUrl}?${params.toString()}`
+
+
+
   return (
+
     <>
       <Protect>
         <main className=" p-8 flex-col lg:w-[89dvw] flex lg:flex-row ">
           {/* right navbar section  */}
-          <SideNavbar></SideNavbar>
+          <SideNavbar  firstName={firstName} profileImg= {imageSrc} lastName={lastName} email={emailAddresses[0].emailAddress} ></SideNavbar>
           {/* Main section  */}
           <main className="lg:ml-5 w-full ">
             {/* top main navbar  */}
@@ -78,4 +94,4 @@ const page = () => {
   );
 }
 
-export default page
+// export default page;
