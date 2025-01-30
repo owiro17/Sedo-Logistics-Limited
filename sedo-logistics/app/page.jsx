@@ -99,7 +99,7 @@ export default function Home() {
         <div className="flex flex-col   gap-10 items-start ">
           <h1 className="heading m-auto text-center lg:text-left lg:m-0  lg:text-4xl">Track <span className="text-blue">Shipping</span>  Expenses <br /> on Your Dashboard</h1>
           <p className="paragraph text-center lg:text-left">Use our tracking system to monitor the status of your shipments in real-time and monitor your shipping costs using our interactive and easy to use dashboard.</p>
-          <Link href="" className="btn-custom m-auto lg:m-0 ">Dashboard</Link>
+          <Link href="/Dashboard" className="btn-custom m-auto lg:m-0 ">Dashboard</Link>
         </div>
       </section>
 
