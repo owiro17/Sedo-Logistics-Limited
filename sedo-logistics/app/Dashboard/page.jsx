@@ -5,11 +5,21 @@ import Image from 'next/image'
 import ShipmentsTable from '../components/ShipmentsTable'
 import SideNavbar from './../components/SideNavbar';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import { currentUser } from '@clerk/nextjs/server'
+import { currentUser, auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation';
+// import getUserData from './datahandler';
+
 
 export default async function page () {
+  // const { userId } = await auth()
+  // if (!userId) {
+  //     return redirect('/Sign-in') ;
+  // }
   const user = await currentUser();
-  const { imageUrl,firstName,lastName,emailAddresses } = user
+  console.log(user)
+  // const firstName = user.firstName
+  const { firstName, lastName, emailAddresses } = user
+
   console.log(user)
   const params = new URLSearchParams()
 
@@ -18,7 +28,7 @@ export default async function page () {
   params.set('quality', '100')
   params.set('fit', 'crop')
 
-  const imageSrc = `${imageUrl}?${params.toString()}`
+  const imageSrc = `${user.imageUrl}?${params.toString()}`
 
 
 
@@ -36,7 +46,7 @@ export default async function page () {
               {/* greeting babel */}
               <div className="babel">
                 <h1 className="font-manrope text-secondary font-bold">
-                  Hey John!
+                  Hey {firstName}!
                 </h1>
                 <p className="font-openSans font-normal text-sm text-gray-500">
                   {new Date().toLocaleDateString("en-US", {
