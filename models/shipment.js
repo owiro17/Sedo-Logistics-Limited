@@ -21,11 +21,12 @@ const shipmentSchema = new Schema({
     description: { type: String, required: true },
     quantity: { type: Number, required: true },
     unit: { type: String, required: true },
-    dimension: { type: String, required: true },
+    dimension: { type: String, required: false },
+    weight: { type: String, required: true },
   }],
   documents: [{
-    name: { type: String, required: true },
-    link: { type: String, required: true },
+    name: { type: String, required: false },
+    link: { type: String, required: false },
   }],
   progress: [
     {
