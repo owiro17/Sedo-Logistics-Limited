@@ -3,42 +3,28 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ShipmentsTable from '../components/ShipmentsTable'
-import SideNavbar from './../components/SideNavbar';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import { currentUser, auth } from '@clerk/nextjs/server'
-import { redirect } from 'next/navigation';
+import { currentUser } from '@clerk/nextjs/server'
+// import { redirect } from 'next/navigation';
 // import getUserData from './datahandler';
 
 
 export default async function page () {
-  // const { userId } = await auth()
-  // if (!userId) {
-  //     return redirect('/Sign-in') ;
-  // }
-  const user = await currentUser();
-  console.log(user)
-  // const firstName = user.firstName
-  const { firstName, lastName, emailAddresses } = user
+        const user = await currentUser();
+        console.log(user)
+        const { firstName } = user
 
-  console.log(user)
-  const params = new URLSearchParams()
-
-  params.set('height', '200')
-  params.set('width', '200')
-  params.set('quality', '100')
-  params.set('fit', 'crop')
-
-  const imageSrc = `${user.imageUrl}?${params.toString()}`
 
 
 
   return (
+    
 
     <>
       <Protect>
-        <main className=" p-8 flex-col lg:w-[89dvw] flex lg:flex-row ">
+        <main className="flex-col align-top  flex lg:flex-row ">
           {/* right navbar section  */}
-          <SideNavbar  firstName={firstName} profileImg= {imageSrc} lastName={lastName} email={emailAddresses[0].emailAddress} ></SideNavbar>
+          {/* <SideNavbar  firstName={firstName} profileImg= {imageSrc} lastName={lastName} email={emailAddresses[0].emailAddress} ></SideNavbar> */}
           {/* Main section  */}
           <main className="lg:ml-5 w-full ">
             {/* top main navbar  */}

@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 
   return (
     <>
-      <section className="lg:m-0 w-full lg:w-[42%]">
+      <section className="lg:m-0 w-full lg:w-[25dvw]">
         <div className="babel w-full inline-block ">
           <div className="inline-block align-middle">
             <Image
