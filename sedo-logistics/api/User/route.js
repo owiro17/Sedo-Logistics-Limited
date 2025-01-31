@@ -1,4 +1,4 @@
-import connectToDatabase from '../../../../libs/connectDBdb'
+import connectToDatabase from '../../../../libs/connectDB'
 import userSchema from '../../../../models/users'
 import { NextResponse } from 'next/server';
 
