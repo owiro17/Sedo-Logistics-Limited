@@ -1,4 +1,4 @@
-import connectToDatabase from '../../../../libs/mongodb'
+import connectToDatabase from '../../../../libs/connectDBdb'
 import userSchema from '../../../../models/users'
 import { NextResponse } from 'next/server';
 

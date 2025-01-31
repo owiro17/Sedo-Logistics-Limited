@@ -1,4 +1,4 @@
-import connectToDatabase from "../../../../libs/mongodb";
+import connectToDatabase from "../../../../libs/connectDB";
 import Shipment from "../../../../models/shipment";
 import { NextResponse } from "next/server";
 
