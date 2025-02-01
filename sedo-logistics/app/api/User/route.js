@@ -1,5 +1,5 @@
-import connectToDatabase from '../../../../libs/connectDB'
-import userSchema from '../../../../models/users'
+import connectToDatabase from '../../../libs/connectDB'
+import userSchema from '../../../models/user'
 import { NextResponse } from 'next/server';
 
 
@@ -17,6 +17,6 @@ export async function POST(Request) {
         return new NextResponse(`Missing required fields: ${missingFields.join(', ')}`, { status: 400 });
     }
     await userSchema.create({ ...userData, createdAt: new Date() })
-    return new NextResponse("User created successfully", {status: 200})
+    return new NextResponse("User created successfully", { status: 200 })
 
 }    
