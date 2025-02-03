@@ -14,9 +14,6 @@ export default async function page () {
         console.log(user)
         const { firstName } = user
 
-
-
-
   return (
     
 
