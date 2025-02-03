@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { useUser } from '../context/UserContext';
+// import { useUser } from '../context/UserContext';
 // import { UserProvider } from '../context/UserContext';
 const page = () => {
-  const { user } = useUser();
+  // const { user } = useUser();
   const shipments = [
     {
       refNo: 1,
@@ -39,7 +39,7 @@ const page = () => {
   ];
   return (
     <div className="flex align-top relative gap-8">
-                  <h1>Welcome, {user?.firstName}</h1>
+                  {/* <h1>Welcome, {user?.firstName}</h1> */}
       <div className="overflow-x-scroll  border border-black bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-extrabold font-manrope text-secondary text-center mb-2">
           Your Shipments
