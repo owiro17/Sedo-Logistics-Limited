@@ -1,25 +1,20 @@
-'user client'
+// 'use client'
 import React from 'react';
 import PropTypes from 'prop-types';
 import SideNavbar from '../components/SideNavbar';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import { currentUser } from '@clerk/nextjs/server';
-// import { useUser } from './context/UserContext';
+// import axios from 'axios';
 
 export default async function Layout({ children }) {
+    const userData = await currentUser();
+    if (!userData){
+        return <RedirectToSignIn signInFallbackRedirectUrl="/sign-in" />;
+    }
 
-    const user = await currentUser();
-    console.log(user);
-
-    const { firstName, lastName, emailAddresses} = user;
-
-    const params = new URLSearchParams();
-    params.set('height', '200');
-    params.set('width', '200');
-    params.set('quality', '100');
-    params.set('fit', 'crop');
-
-    const imageSrc = `${user.imageUrl}?${params.toString()}`;
+    const { firstName, lastName, emailAddresses, imageUrl } = userData;
+    const params = new URLSearchParams({ height: '200', width: '200', quality: '100', fit: 'crop' });
+    const imageSrc = `${imageUrl}?${params.toString()}`;
 
     return (
         <>
@@ -30,7 +25,7 @@ export default async function Layout({ children }) {
                         firstName={firstName}
                         profileImg={imageSrc}
                         lastName={lastName}
-                        email={emailAddresses[0].emailAddress}
+                        email={emailAddresses?.[0]?.emailAddress}
                     />
                     {/* Main section */}
                     <main className="lg:ml-5">{children}</main>

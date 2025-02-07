@@ -1,6 +1,7 @@
 import {Schema,mongoose} from 'mongoose';
 //  create a schema
 const shipmentSchema = new Schema({
+  userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   consignee: {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },

@@ -1,43 +1,36 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+'use client'
+import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import ShipmentsTable from '../components/ShipmentsTable';
-import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import axios from 'axios';
 import { useAuth } from '@clerk/nextjs';
+import { useEffect, useState } from 'react';
 
-export default function DashboardPage() {
-  const { userId } = useAuth();
-  if(!userId){
-    console.log("error no user id"); 
-  }
-console.log("User ID:",userId);
-  const [userData, setUser] = useState(null); // To store user data
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get(`/api/getUser?userId=${userId}`);
-        setUser(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error('There was a problem fetching user data:', error);
-      }
-    };
-      fetchUserData();
-
-  }, []);
-
+const Admin = () => {
+    const { userId } = useAuth();
+    if(!userId){
+      console.log("error no user id"); 
+    }
+  console.log("User ID:",userId);
+    const [userData, setUser] = useState(null); // To store user data
+  
+    useEffect(() => {
+      const fetchUserData = async () => {
+        try {
+          const response = await axios.get(`/api/getUser?userId=${userId}`);
+          setUser(response.data);
+          console.log(response.data);
+        } catch (error) {
+          console.error('There was a problem fetching user data:', error);
+        }
+      };
+        fetchUserData();
+  
+    }, []);
+  
   return (
-    <>
-      <Protect>
-        <main className="flex-col align-top flex lg:flex-row">
-          {/* Main section */}
-          <main className="lg:ml-5 w-full">
-            {/* Top main navbar */}
-            <section className="flex flex-col w-full lg:flex-row gap-4">
+    <div>
+                   <section className="flex flex-col w-full lg:flex-row gap-4">
               {/* Greeting babel */}
               <div className="babel">
                 <h1 className="font-manrope text-secondary font-bold">
@@ -73,7 +66,7 @@ console.log("User ID:",userId);
                   href="/"
                   className="inline-block align-middle font-manrope text-secondary font-extrabold hover:text-primary ease-in-out duration-200 mr-2"
                 >
-                  Request Quote
+                  Create shipment
                 </Link>
                 <Image
                   className="inline-block align-middle"
@@ -84,16 +77,9 @@ console.log("User ID:",userId);
                 />
               </div>
             </section>
-
-            <section>
-              <ShipmentsTable />
-            </section>
-          </main>
-        </main>
-      </Protect>
-      <SignedOut>
-        <RedirectToSignIn signInFallbackRedirectUrl={"/sign"} />
-      </SignedOut>
-    </>
-  );
+      
+    </div>
+  )
 }
+
+export default Admin
