@@ -1,18 +1,15 @@
-// 'use client'
+'use client'
 import React from 'react';
 import PropTypes from 'prop-types';
 import SideNavbar from '../components/SideNavbar';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
-import { currentUser } from '@clerk/nextjs/server';
+// import { currentUser } from '@clerk/nextjs/server';
+import { useUser } from '@clerk/clerk-react'
 // import axios from 'axios';
 
-export default async function Layout({ children }) {
-    const userData = await currentUser();
-    if (!userData){
-        return <RedirectToSignIn signInFallbackRedirectUrl="/sign-in" />;
-    }
-
-    const { firstName, lastName, emailAddresses, imageUrl } = userData;
+export default function Layout({ children }) {
+    const user = useUser();
+    const { firstName, lastName, emailAddresses, imageUrl } = user.user;
     const params = new URLSearchParams({ height: '200', width: '200', quality: '100', fit: 'crop' });
     const imageSrc = `${imageUrl}?${params.toString()}`;
 
@@ -21,6 +18,7 @@ export default async function Layout({ children }) {
             <Protect>
                 <main className="p-8 flex-col align-top lg:w-[89dvw] flex lg:flex-row">
                     {/* right navbar section */}
+
                     <SideNavbar
                         firstName={firstName}
                         profileImg={imageSrc}

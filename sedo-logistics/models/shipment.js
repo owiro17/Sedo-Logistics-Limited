@@ -1,6 +1,6 @@
 import {Schema,mongoose} from 'mongoose';
 //  create a schema
-const shipmentSchema = new Schema({
+const shipmentsSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   consignee: {
     firstName: { type: String, required: true },
@@ -10,7 +10,7 @@ const shipmentSchema = new Schema({
     address: { type: String, required: true },
   },
   shipmentInfo: {
-    ref: { type: String, required: true },
+    ref: { type: String, required: true,unique:true },
     awb: { type: String, required: true },
     currentLocation: { type: String, required: true },
     destination: { type: String, required: true },
@@ -35,6 +35,7 @@ const shipmentSchema = new Schema({
       completed: { type: Boolean, required: true },
     },
   ],
+  createdAt: { type: Date, default: Date.now }
 });
 
-export default mongoose.models.Shipment || mongoose.model('Shipment', shipmentSchema);
+export default mongoose.models.Shipments || mongoose.model('Shipments', shipmentsSchema);

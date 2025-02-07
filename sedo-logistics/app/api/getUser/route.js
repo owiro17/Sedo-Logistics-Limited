@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import connectToDatabase from '../../../libs/connectDB';
 import userSchema from '../../../models/user';
-import {createOrUpdateUser} from '../../../libs/actions/createUpdate';
+import {createOrUpdateUser} from '../../../libs/actions/createUpdateUser';
 import { currentUser} from '@clerk/nextjs/server'
-export async function GET(Response) {
+export async function GET() {
     const clerkdata = await currentUser();
     if (!clerkdata) {
         return new NextResponse("User not authenticated", { status: 401 });
@@ -12,10 +12,6 @@ export async function GET(Response) {
 
     const { id, firstName, lastName, emailAddresses } = clerkdata;
     const email = emailAddresses[0].emailAddress;
-    const { searchParams } = new URL(Response.url);
-    const userId = searchParams.get('userId');
-
-    console.log("Received userId:", userId);
 
     try {
         // Connect to the database
@@ -23,12 +19,12 @@ export async function GET(Response) {
 
         // Extract query parameters from the URL
 
-        if (!userId) {
-            return new NextResponse("Missing userId in query parameters", { status: 400 });
+        if (!id) {
+            return new NextResponse("Missing userId ", { status: 400 });
         }
 
         // Fetch user based on userid
-        const user = await userSchema.findOne({ userid: userId });
+        const user = await userSchema.findOne({ userid: id});
 
         if (!user) {
             console.log("User not found");
@@ -42,6 +38,9 @@ export async function GET(Response) {
                 PhoneNumber: null,
                 companyName: null,
                 shipment:null,
+                invoices:null,
+                quotations:null
+
             });
             console.log("User created:", JSON.stringify(user));
             return new NextResponse("User was not found but created: " + JSON.stringify(user), { status: 404 });

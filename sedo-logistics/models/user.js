@@ -10,6 +10,8 @@ const userSchema = new Schema({
   companyName: { type: String, required: false },
   userid: { type: String, unique: true, sparse: true,require:true }, // Sparse index to avoid null conflicts
   shipments: [{ type: Schema.Types.ObjectId, ref: 'Shipment' }],
+  quotations: [{ type: Schema.Types.ObjectId, ref: 'Quotation' }],
+  invoices: [{ type: Schema.Types.ObjectId, ref: 'Invoice' }],
 });
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);
