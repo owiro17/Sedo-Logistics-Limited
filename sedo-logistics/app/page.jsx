@@ -1,140 +1,226 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import ReviewCard from "./components/ReviewCard";
 import Link from "next/link";
-export const metadata = {
-  title: "Home - Sedo Logistics",
-  description: "Welcome to Sedo Logistics. We provide efficient and reliable logistics solutions including air, sea, and road freight services.",
-  keywords: ["Logistics", "Air Freight", "Sea Freight", "Road Freight", "Shipping", "Cargo Transportation"],
-  author: "Sedo Logistics",
-  openGraph: {
-    title: "Home - Sedo Logistics",
-    description: "Welcome to Sedo Logistics. We provide efficient and reliable logistics solutions including air, sea, and road freight services.",
-    url: "https://www.sedologistics.co.ke",
-    images: [
-      {
-        url: "/logo 3.png",
-        width: 800,
-        height: 600,
-        alt: "Sedo Logistics Logo",
-      },
-    ],
-  },
-};
-
+import Meta from "./components/Meta";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
 export default function Home() {
+  const MetaData = {
+    title: "Home - Sedo Logistics",
+    description:
+      "Welcome to Sedo Logistics. We provide efficient and reliable logistics solutions including air, sea, and road freight services.",
+    keywords: [
+      "Logistics",
+      "Air Freight",
+      "Sea Freight",
+      "Road Freight",
+      "Shipping",
+      "Cargo Transportation",
+    ],
+    author: "Sedo Logistics",
+    openGraph: {
+      title: "Home - Sedo Logistics",
+      description:
+        "Welcome to Sedo Logistics. We provide efficient and reliable logistics solutions including air, sea, and road freight services.",
+      url: "https://www.sedologistics.co.ke",
+      images: [
+        {
+          url: "/logo 3.png",
+          width: 800,
+          height: 600,
+          alt: "Sedo Logistics Logo",
+        },
+      ],
+    },
+  };
   const ServiceCard = [
-  {
-    icon: "/planeIcon.svg",
-    name: "Air Freight",
-    link: "/Air-Freight"
-  },
-  {
-    icon: "/seaIcon.svg",
-    name: "Sea Freight",
-    link:"/Sea-Freight"
-  },
-  {
-    icon: "/roadIcon.svg",
-    name: "Road Freight",
-    link:"/Road-Freight"
-  }
-  ]
+    {
+      icon: "/planeIcon.svg",
+      name: "Air Freight",
+      link: "/Air-Freight",
+    },
+    {
+      icon: "/seaIcon.svg",
+      name: "Sea Freight",
+      link: "/Sea-Freight",
+    },
+    {
+      icon: "/roadIcon.svg",
+      name: "Road Freight",
+      link: "/Road-Freight",
+    },
+  ];
   const aboutData = [
     {
-      number : 30,
-      text:"Trusted Clients"
+      number: 30,
+      text: "Trusted Clients",
     },
     {
-      number:30,
-      text:"Years of Experience"
-      
+      number: 30,
+      text: "Years of Experience",
     },
     {
-      number:500,
-      text:"Completed Shipments"
-    }
-]
-// const PartnerLogo =[
-//     {
-//       src:'/jswebLogo.svg',
-//       name:'jsweb',
+      number: 500,
+      text: "Completed Shipments",
+    },
+  ];
+  const revealAnimation = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeInOut", delay: 0.2 },
+  };
+  // array of words to loop through
+  const [index, setIndex] = useState(0);
+  const Herowords = ["Reliable ", "Efficient","Secure"];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % Herowords.length);
+    }, 2000); // Change word every 2 seconds
 
-//     },
-//     {
-//       src:'/jswebLogo.svg',
-//       name:'jsweb',
-
-//     },
-//     {
-//       src:'/jswebLogo.svg',
-//       name:'jsweb',
-
-//     },
-//     {
-//       src:'/jswebLogo.svg',
-//       name:'jsweb',
-
-//     },
-// ]
+    return () => clearInterval(interval);
+  }, []);
   return (
     <main className="">
-        <div className="w-[100%]  bg-hero  h-[89dvh] absolute  z-20  blur-xl">
+      <Meta
+        title={MetaData.title}
+        description={MetaData.description}
+        keywords={MetaData.keywords}
+        author={MetaData.author}
+        openGraph={MetaData.openGraph}
+      />
+      <div className="w-[100%]  bg-hero  h-[89dvh] absolute  z-20  blur-xl"></div>
+      <section className="  z-10 m-auto lg:w-[75%]  py-20 mb-16   flex flex-col md:items-center gap-2 justify-center p-8  ">
+        <motion.div
+          variants={revealAnimation}
+          initial={"initial"}
+          animate={"animate"}
+          transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
+          className="heading z-30 mt-10 lg:text-[45px] text-center "
+        >            
+        <span className="relative overflow-hidden ">
+          <AnimatePresence mode="wait">
 
-        </div>
-        <section className="  z-10 m-auto lg:w-[75%]  py-20 mb-16   flex flex-col md:items-center gap-2 justify-center p-8  ">
+            <motion.span
+              key={Herowords[index]} //
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 200, // Controls the bounce strength
+                damping: 15, // Controls how fast it settles
+              }}
+              exit={{ opacity: 0, y: -10 }}
+              className="inline-block"
+            >
+              {Herowords[index]}
+            </motion.span>
+          </AnimatePresence>
 
-          <h1 className="heading z-30 mt-10 lg:text-[45px] text-center ">Reliable <span className="text-blue">Logistics </span>Solutions <br></br> for Your <span className="text-blue">Business</span> </h1>
-          <p className="paragraph z-30  text-center md:text-center lg:text-center ">Welcome to <span className="text-blue">Sedo Logistics Limited</span>  , your trusted partner in logistics and supply chain management. We offer efficient, cost-effective solutions to meet your transportation needs..</p>
-          <Link href="#contact-us" className="btn-custom z-30 m-auto mt-6 " style={{scrollBehavior: 'smooth'}}>Get Started</Link>
-        </section>
+        </span>
+          <span className="text-blue"> Logistics </span>Solutions <br></br> for
+          Your <span className="text-blue">Business</span>{" "}
+        </motion.div>
+          <motion.p
+            variants={revealAnimation}
+            initial={"initial"}
+            animate={"animate"}
+            delay={0.4}
+            className="paragraph z-30  text-center md:text-center lg:text-center "
+          >
+            Welcome to <span className="text-blue">Sedo Logistics Limited</span>{" "}
+            , your trusted partner in logistics and supply chain management. We
+            offer efficient, cost-effective solutions to meet your
+            transportation needs..
+          </motion.p>
+    
+
+        <motion.button
+          variants={revealAnimation}
+          initial={"initial"}
+          animate={"animate"}
+          className="btn-custom z-30 m-auto mt-6 "
+        >
+          
+            Get Started
+        </motion.button>
+      
+      </section>
       {/* dashboard section */}
       <section className="flex relative top-32 mb-16  z-20 flex-col lg:flex-row dash-bg justify-evenly align-middle gap-[60px] p-[48px] py- rounded-lg">
-
         <div className="">
           <div className=" border-black">
-          <Image className="rounded-lg shadow-lg" src="/dashboardPic.png" alt="dashboard sample"   width={1000} height={500} />
+            <Image
+              className="rounded-lg shadow-lg"
+              src="/dashboardPic.png"
+              alt="dashboard sample"
+              width={1000}
+              height={500}
+            />
           </div>
         </div>
         <div className="flex flex-col   gap-10 items-start ">
-          <h1 className="heading m-auto text-center lg:text-left lg:m-0  lg:text-4xl">Track <span className="text-blue">Shipping</span>  Expenses <br /> on Your Dashboard</h1>
-          <p className="paragraph text-center lg:text-left">Use our tracking system to monitor the status of your shipments in real-time and monitor your shipping costs using our interactive and easy to use dashboard.</p>
-          <Link href="/Dashboard" className="btn-custom m-auto lg:m-0 ">Dashboard</Link>
+          <h1 className="heading m-auto text-center lg:text-left lg:m-0  lg:text-4xl">
+            Track <span className="text-blue">Shipping</span> Expenses <br /> on
+            Your Dashboard
+          </h1>
+          <p className="paragraph text-center lg:text-left">
+            Use our tracking system to monitor the status of your shipments in
+            real-time and monitor your shipping costs using our interactive and
+            easy to use dashboard.
+          </p>
+          <Link href="/Dashboard" className="btn-custom m-auto lg:m-0 ">
+            Dashboard
+          </Link>
         </div>
       </section>
 
-      
       {/* about section */}
       <section className=" flex top-24 relative flex-col items-center lg:top-40 gap-8 ">
-
         <div className="pb-[48px] flex flex-col lg:z-10  relative top-10 lg:top-0 lg:flex-row gap-8 lg:gap-16">
-          {ServiceCard.map((card,index) => (
-            <div key={index} className="bg-cardBg bg-cover   bg-no-repeat py-[21px] px-[28px] rounded-lg shadow-lg  flex flex-col items-start justify-center gap-4 w-[100%] lg:w-[25%]">
-              <Image src={card.icon} alt={card.name}  width={40} height={40} />
-              <h2 className="small-heading">{card.name}  </h2>
-              <Link className="paragraph hover:text-primary flex items-center justify-center gap-1" href={card.link}>see more<Image src="/arrowRight.svg" alt="see-more"  width={20} height={20} /></Link>
+          {ServiceCard.map((card, index) => (
+            <div
+              key={index}
+              className="bg-cardBg bg-cover   bg-no-repeat py-[21px] px-[28px] rounded-lg shadow-lg  flex flex-col items-start justify-center gap-4 w-[100%] lg:w-[25%]"
+            >
+              <Image src={card.icon} alt={card.name} width={40} height={40} />
+              <h2 className="small-heading">{card.name} </h2>
+              <Link
+                className="paragraph hover:text-primary flex items-center justify-center gap-1"
+                href={card.link}
+              >
+                see more
+                <Image
+                  src="/arrowRight.svg"
+                  alt="see-more"
+                  width={20}
+                  height={20}
+                />
+              </Link>
             </div>
           ))}
-
         </div>
 
         <div className=" about-section bg-cover bg-no-repeat w-full rounded-lg  px-8 py-10  lg:pt-[140px] lg:bottom-[190px] lg:relative   lg:z-0  flex flex-col items-center ">
-          <h1 className="  heading text-center lg:mt-10 ">Leading Logistics Company</h1>
+          <h1 className="  heading text-center lg:mt-10 ">
+            Leading Logistics Company
+          </h1>
           <div className="lg:flex gap-6">
-            {
-              aboutData.map((item,index) =>(
-              <div key={index} className="w-[50dvw] my-5 lg:w-[15dvw] flex flex-col items-center gap-2">
-                <h2 className="font-manrope  text-blue text-4xl font-bold ">{item.number}+</h2>
+            {aboutData.map((item, index) => (
+              <div
+                key={index}
+                className="w-[50dvw] my-5 lg:w-[15dvw] flex flex-col items-center gap-2"
+              >
+                <h2 className="font-manrope  text-blue text-4xl font-bold ">
+                  {item.number}+
+                </h2>
                 <hr className="w-[90%] border-zinc-500" />
                 <p className="font-openSans">{item.text}</p>
               </div>
-              ))
-            }
-
-          </div >
-
+            ))}
+          </div>
         </div>
-        
       </section>
       {/* Partner section */}
       {/* <section className="relative top-20 flex flex-col gap-20 items-center px-20">
@@ -156,7 +242,10 @@ export default function Home() {
       {/* what clients say section */}
 
       <section className=" relative top-20   flex flex-col items-center ">
-        <h1 className="heading text-center mt-[50px] ">Our <span className="text-blue">Clients</span>  Know <span className="text-blue">Best</span></h1>
+        <h1 className="heading text-center mt-[50px] ">
+          Our <span className="text-blue">Clients</span> Know{" "}
+          <span className="text-blue">Best</span>
+        </h1>
         <div className="flex flex-col lg:flex-row items-center justify-evenly m-auto px-5 py-10 lg:px-0 gap-10">
           <ReviewCard></ReviewCard>
         </div>
@@ -164,19 +253,59 @@ export default function Home() {
 
       {/* contact us section */}
       <section id="contact-us" className="">
-          <h1 className="heading text-center mt-[100px]"><span className="text-blue">Contact </span> us</h1>
-          <div className="flex flex-col lg:flex-row lg:items-baseline mt-20  items-center m-auto basis-1/2">
-          <Image className=" m-auto lg:px-0 px-10" src="/contact-ill.svg" alt="contact ill"  width={400} height={400} />
+        <h1 className="heading text-center mt-[100px]">
+          <span className="text-blue">Contact </span> us
+        </h1>
+        <div className="flex flex-col lg:flex-row lg:items-baseline mt-20  items-center m-auto basis-1/2">
+          <Image
+            className=" m-auto lg:px-0 px-10"
+            src="/contact-ill.svg"
+            alt="contact ill"
+            width={400}
+            height={400}
+          />
           <form className="flex flex-col gap-4 p-10 m-auto mt-10 lg-mt-0    rounded-lg shadow-lg">
-            <h2 className="text-xl font-raleway font-semibold text-center text-gray-800">Get in Touch</h2>
-              <input type="text" id="firstName" name="firstName" placeholder="First Name" className="text-black bg-[#C8E9F9] h-10 px-5 pr-16 rounded-lg text-sm focus:outline-1" required />
-              <input type="text" id="lastName" name="lastName" placeholder="Last Name" className="text-black bg-[#C8E9F9] h-10 px-5 pr-16 rounded-lg text-sm focus:outline-1" required />
-              <input type="email" id="email" name="email"placeholder="Email"  className="text-black bg-[#C8E9F9] h-10 px-5 pr-16 rounded-lg text-sm focus:outline-1" required />
-              <textarea id="shipmentDetails" name="shipmentDetails" placeholder="Shipment Details"  rows="3" className="text-black bg-[#C8E9F9] h-32 px-5 pr-16 rounded-lg text-sm focus:outline-1" required></textarea>
-            
-            <button type="submit" className="btn-custom">Submit</button>
+            <h2 className="text-xl font-raleway font-semibold text-center text-gray-800">
+              Get in Touch
+            </h2>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="First Name"
+              className="text-black bg-[#C8E9F9] h-10 px-5 pr-16 rounded-lg text-sm focus:outline-1"
+              required
+            />
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name"
+              className="text-black bg-[#C8E9F9] h-10 px-5 pr-16 rounded-lg text-sm focus:outline-1"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              className="text-black bg-[#C8E9F9] h-10 px-5 pr-16 rounded-lg text-sm focus:outline-1"
+              required
+            />
+            <textarea
+              id="shipmentDetails"
+              name="shipmentDetails"
+              placeholder="Shipment Details"
+              rows="3"
+              className="text-black bg-[#C8E9F9] h-32 px-5 pr-16 rounded-lg text-sm focus:outline-1"
+              required
+            ></textarea>
+
+            <button type="submit" className="btn-custom">
+              Submit
+            </button>
           </form>
-          </div>
+        </div>
       </section>
     </main>
   );
