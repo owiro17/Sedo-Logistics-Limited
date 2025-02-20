@@ -16,7 +16,7 @@ export default function Layout({ children }) {
     return (
         <>
             <Protect>
-                <main className="p-8 flex-col align-top lg:w-[89dvw] flex lg:flex-row">
+                <main className="p-8 flex-col align-top lg:w-[89dvw] m-auto flex lg:flex-row">
                     {/* right navbar section */}
 
                     <SideNavbar

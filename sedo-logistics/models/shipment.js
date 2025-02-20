@@ -12,6 +12,7 @@ const shipmentsSchema = new Schema({
   shipmentInfo: {
     ref: { type: String, required: true,unique:true },
     awb: { type: String, required: true },
+    shipmentTitle: { type: String, required: true },
     currentLocation: { type: String, required: true },
     destination: { type: String, required: true },
     estimatedDeliveryDate: { type: Date, required: true },

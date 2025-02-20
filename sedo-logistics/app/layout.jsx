@@ -7,6 +7,11 @@ import Loading from "./loading.js";
 // eslint-disable-next-line no-unused-vars
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import {EdgeStoreProvider } from "../libs/edgestore.ts"
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["300", "400", "600"],
@@ -19,10 +24,6 @@ const raleway = Raleway({
   display: "swap",
   variable: "--font-raleway",
 });
-
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 export const metadata = {
   title: "Sedo Logistics",
   description:
@@ -49,7 +50,7 @@ export default function RootLayout({ children }) {
           <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         </head>
         <body
-          className={`${manrope.variable} ${raleway.variable}  lg:w-[90%] relative top-20 m-auto`}
+          className={`${manrope.variable} ${raleway.variable}  relative top-20 m-auto`}
         >
           <ClerkProvider>
             <ClerkLoading>
@@ -57,7 +58,10 @@ export default function RootLayout({ children }) {
             </ClerkLoading>
             <ClerkLoaded>
               <Navbar />
+              <EdgeStoreProvider>
               {children}
+              </EdgeStoreProvider>
+              
               <Footer />
             </ClerkLoaded>
 

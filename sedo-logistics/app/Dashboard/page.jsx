@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import ShipmentsTable from '../components/ShipmentsTable';
+import ShortShipmentsTable from '../components/ShortShipmentsTable';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import axios from 'axios';
 import { useAuth } from '@clerk/nextjs';
@@ -13,29 +13,32 @@ export default function DashboardPage() {
   if(!userId){
     console.log("error no user id"); 
   }
-console.log("User ID:",userId);
+  console.log("User ID:", userId);
+  
   const [userData, setUser] = useState(null); // To store user data
-  // const [shipmentData, setShipment] = useState(null); // To store shipment data
+  const [shipmentData, setShipment] = useState([]); // To store shipment data
+  
   const fetchUserData = async () => {
     try {
       const response = await axios.get(`/api/getUser?userId=${userId}`);
       setUser(response.data);
-      console.log("userdata: " +JSON.stringify(response.data) );
+      console.log("userdata: " + JSON.stringify(response.data));
     } catch (error) {
       console.error('There was a problem fetching user data:', error);
     }
   };
-  // const fetchShipmentData = async () => {
-  //   try {
-  //     const response = await axios.get(`/api/getShipment`);
-  //     setShipment(response.data);
-  //     console.log("shipment data: " +JSON.stringify(response.data) );
-      
-  //   } catch (error) {
-  //     console.error('There was a problem fetching shipment data:', error);
-  //   }
-  // };
-  const postShipmentData = async() =>{
+  
+  const fetchShipmentData = async () => {
+    try {
+      const response = await axios.get(`/api/getShipment`);
+      setShipment(response.data);
+      console.log("shipment data from api: " + JSON.stringify(response.data));
+    } catch (error) {
+      console.error('There was a problem fetching shipment data:', error);
+    }
+  };
+  
+  const postShipmentData = async () => {
     try {
       const shipmentData = {
         "consignee": {
@@ -49,6 +52,7 @@ console.log("User ID:",userId);
           "ref": "SHIP12345",
           "awb": "234-684-443",
           "currentLocation": "Ethiopia",
+          "shipmentTitle": "White Towels and Shower Curtains",
           "destination": "Kenya",
           "estimatedDeliveryDate": "2025-05-30T00:00:00.000Z",
           "status": "Documentation",
@@ -107,11 +111,9 @@ console.log("User ID:",userId);
   }
 
   useEffect(() => {
-
-      fetchUserData();
-      // fetchShipmentData();
-      postShipmentData();
-
+    fetchUserData();
+    fetchShipmentData();
+    // postShipmentData();
   }, []);
 
   return (
@@ -171,7 +173,7 @@ console.log("User ID:",userId);
             </section>
 
             <section>
-              <ShipmentsTable />
+              <ShortShipmentsTable shipmentData={shipmentData} count={3} />
             </section>
           </main>
         </main>

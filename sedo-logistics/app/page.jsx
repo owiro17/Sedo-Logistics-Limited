@@ -7,6 +7,70 @@ import Meta from "./components/Meta";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 export default function Home() {
+  // const shipments=[ {
+  //   "consignee": {
+  //     "firstName": "Shawn",
+  //     "lastName": "Owiro",
+  //     "email": "shawn.owiro@example.com",
+  //     "phone": "+254792649085",
+  //     "address": "Nyayo Estate, Nairobi, Kenya"
+  //   },
+  //   "shipmentInfo": {
+  //     "ref": "SHIP12345",
+  //     "awb": "234-684-443",
+  //     "currentLocation": "Ethiopia",
+  //     "shipmentTitle": "White Towels and Shower Curtains",
+  //     "destination": "Kenya",
+  //     "estimatedDeliveryDate": "20/05/2025",
+  //     "status": "Documentation",
+  //     "modeOfTransport": "Air"
+  //   },
+  //   "goodsInfo": [
+  //     {
+  //       "description": "White Towels",
+  //       "quantity": 20,
+  //       "unit": "Pc",
+  //       "dimension": "50cm x 60cm",
+  //       "weight": "5kg"
+  //     },
+  //     {
+  //       "description": "Shower Curtains",
+  //       "quantity": 10,
+  //       "unit": "Pc",
+  //       "dimension": "200cm x 180cm",
+  //       "weight": "3kg"
+  //     }
+  //   ],
+  //   "documents": [
+  //     {
+  //       "name": "IDF Document",
+  //       "link": "https://example.com/documents/idf.pdf"
+  //     },
+  //     {
+  //       "name": "Invoice",
+  //       "link": "https://example.com/documents/invoice.pdf"
+  //     }
+  //   ],
+  //   "progress": [
+  //     {
+  //       "step": "Documentation",
+  //       "completed": true
+  //     },
+  //     {
+  //       "step": "Customs Clearance",
+  //       "completed": false
+  //     },
+  //     {
+  //       "step": "Delivery",
+  //       "completed": false
+  //     },
+  //     {
+  //       "step": "Delivered",
+  //       "completed": false
+  //     }
+  //   ]
+  // }]
+
   const MetaData = {
     title: "Home - Sedo Logistics",
     description:
@@ -99,7 +163,6 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
           className="heading z-30 mt-10 lg:text-[45px] text-center "
         >            
-        <span className="relative overflow-hidden ">
           <AnimatePresence mode="wait">
 
             <motion.span
@@ -112,13 +175,11 @@ export default function Home() {
                 damping: 15, // Controls how fast it settles
               }}
               exit={{ opacity: 0, y: -10 }}
-              className="inline-block"
+              className="inline-block w-[175px] relative text-center "
             >
               {Herowords[index]}
             </motion.span>
           </AnimatePresence>
-
-        </span>
           <span className="text-blue"> Logistics </span>Solutions <br></br> for
           Your <span className="text-blue">Business</span>{" "}
         </motion.div>
@@ -142,7 +203,7 @@ export default function Home() {
           animate={"animate"}
           className="btn-custom z-30 m-auto mt-6 "
         >
-          
+
             Get Started
         </motion.button>
       

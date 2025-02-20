@@ -14,7 +14,7 @@ export async function GET() {
     // if (!clerkData) {
     //     return new NextResponse("User not authenticated", { status: 401 });
     // }
-    const userID = "63e4a1f5e621b5c2e334ae76";
+    const userID = "67a660ea52e89515aaa3c173";
     try {
         const shipments = await shipmentSchema.find({userId:userID})
         console.log("shipment for user : "+  shipments)
