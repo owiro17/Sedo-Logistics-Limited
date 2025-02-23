@@ -6,6 +6,8 @@ import Image from 'next/image';
 import ShortShipmentsTable from '../components/ShortShipmentsTable';
 import { Protect, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
 import axios from 'axios';
+import Skeleton from 'react-loading-skeleton'
+
 import { useAuth } from '@clerk/nextjs';
 
 export default function DashboardPage() {
@@ -119,7 +121,7 @@ export default function DashboardPage() {
   return (
     <>
       <Protect>
-        <main className="flex-col align-top flex lg:flex-row">
+        <main className="flex-col align-top  flex lg:flex-row">
           {/* Main section */}
           <main className="lg:ml-5 w-full">
             {/* {shipmentData ? JSON.stringify(shipmentData) : 'Loading...'} */}
@@ -142,7 +144,7 @@ export default function DashboardPage() {
               <div className="babel">
                 <div className="inline-block align-middle">
                   <h1 className="font-manrope text-4xl mr-2 text-green-600 font-extrabold">
-                    {/* 10+{userData.shipments ? userData.shipments.length : 'Loading...'} */}
+                    {userData?.shipments ? "+" + userData.shipments.length : <Skeleton width={50} height={50}></Skeleton>}
                   </h1>
                 </div>
                 <div className="inline-block align-middle">
@@ -155,21 +157,24 @@ export default function DashboardPage() {
                 </div>
               </div>
               {/* Request quote babel */}
-              <div className="babel border-green-900 border-2 inline-block">
+              {/* <div className="babel border-green-900 border-2 inline-block"> */}
                 <Link
-                  href="/"
-                  className="inline-block align-middle font-manrope text-secondary font-extrabold hover:text-primary ease-in-out duration-200 mr-2"
+                  href="Dashboard/RequestQuote"
+                  className="babel border-green-900 border-2 flex items-center justify-center"
                 >
+                  <h3 className="font-manrope text-secondary font-extrabold">
                   Request Quote
-                </Link>
-                <Image
-                  className="inline-block align-middle"
+                  </h3>
+                  <Image
+                  className="inline ml-2 align-middle"
                   src="/plus.svg"
                   alt="Plus.svg"
                   width={35}
                   height={40}
                 />
-              </div>
+                </Link>
+
+
             </section>
 
             <section>

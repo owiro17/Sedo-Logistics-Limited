@@ -65,8 +65,15 @@ body {
   .heading {
     @apply text-4xl lg:text-[45px];
   }
+  .custom-input{
+    @apply px-2 py-1 border border-black mt-1 text-sm font-openSans;
+  }
+
   .babel{
     @apply bg-white  rounded-lg px-6 py-4 border border-black hover:shadow-md;
+  }
+  .small-paragraph {
+    @apply font-openSans font-normal text-sm text-gray-500;
   }
 }
 
@@ -103,11 +110,11 @@ p {
   overflow-wrap: break-word; /* Use this instead */
   letter-spacing: 0.3px;
 }
-input {
+/* input {
   font-weight: 400;
   color: #000000;
   font-family: var(--font-open-sans), sans-serif;
-}
+} */
 
 li {
   font-family: var(--font-open-sans), sans-serif;

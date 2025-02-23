@@ -26,7 +26,7 @@ export default function Layout({ children }) {
                         email={emailAddresses?.[0]?.emailAddress}
                     />
                     {/* Main section */}
-                    <main className="lg:ml-5">{children}</main>
+                    <main className="lg:ml-5 w-full">{children}</main>
                 </main>
             </Protect>
             <SignedOut>

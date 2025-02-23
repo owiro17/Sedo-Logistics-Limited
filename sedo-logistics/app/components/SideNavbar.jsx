@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 
   return (
     <>
-      <section className="lg:m-0 w-full lg:w-[25dvw]">
+      <section className="lg:m-0 w-full lg:w-[35dvw]">
         <div className="babel w-full inline-block ">
           <div className="inline-block align-middle">
             <Image
@@ -40,6 +40,7 @@ import { usePathname } from "next/navigation";
 
         <div className="bg-white rounded-lg px-3 py-4 border border-black shadow-md my-8">
           <ul className="flex flex-col gap-2">
+          <Link className="font-manrope text-secondary font-bold" href= {`/Dashboard`}>
           <li
                 className={`flex duration-100 ease-in px-4 py-2 hover:bg-gray-200  rounded-md gap-1 ${
                   pathname === `/Dashboard` ? "bg-gray-200" : ""
@@ -52,13 +53,16 @@ import { usePathname } from "next/navigation";
               width={38}
               height={40}
             />
-                <Link className="font-manrope text-secondary font-bold hover:text-primary" href= {`/Dashboard`}>
+            <p className="font-manrope text-secondary font-bold">
                   Dashboard
-                </Link>
+
+            </p>
             </li>
+          </Link>
             {navLinks.map((link) => (
+            <Link key={link.name} className="font-manrope text-secondary font-bold" href= {`/Dashboard/${link.name}`}>
               <li
-                key={link.name}
+
                 className={`flex duration-100 ease-in px-4 py-2 hover:bg-gray-200  rounded-md gap-1 ${
                   pathname === `/Dashboard/${link.name}` ? "bg-gray-200" : ""
                 }`}
@@ -70,10 +74,12 @@ import { usePathname } from "next/navigation";
               width={38}
               height={40}
             />
-                <Link className="font-manrope text-secondary font-bold hover:text-primary" href= {`/Dashboard/${link.name}`}>
+            <p className="font-manrope text-secondary font-bold">
                   {link.name}
-                </Link>
+
+            </p>
               </li>
+                </Link>
             ))}
            
           </ul>
