@@ -8,12 +8,27 @@ import { useEffect } from "react";
 import { MultiFileDropzone } from "../../components/MultiFileDropZone";
 export default function Page() {
   const [file, setFile] = useState();
-  const { edgestore } = useEdgeStore();
+  // const { edgestore } = useEdgeStore();
   const [userData, setUser] = useState(null); // To store user data
   const user = useUser();
   useEffect(() => {
     setUser(user.user);
   }, []);
+
+  const [fileStates, setFileStates] = useState([]);
+  const { edgestore } = useEdgeStore();
+  function updateFileProgress(key, progress) {
+    setFileStates((fileStates) => {
+      const newFileStates = structuredClone(fileStates);
+      const fileState = newFileStates.find(
+        (fileState) => fileState.key === key,
+      );
+      if (fileState) {
+        fileState.progress = progress;
+      }
+      return newFileStates;
+      });
+    }
 
   return (
     <>
@@ -22,7 +37,7 @@ export default function Page() {
         <p className="paragraph text-sm font-openSans text-gray-700 text-center">
           Please provide the necessary documents and information below
         </p>
-        <form className="">
+        <form action={CreateQuotation} className="">
         {/* /*personal details */}
                   <section className="border-b border-t py-4 border-black mt-4">
                     <div>
@@ -269,7 +284,36 @@ export default function Page() {
                   </div>
                   <div className="mt-4">
 
-                    <MultiFileDropzone />
+                  <MultiFileDropzone
+        value={fileStates}
+        onChange={(files) => {
+          setFileStates(files);
+        }}
+        onFilesAdded={async (addedFiles) => {
+          setFileStates([...fileStates, ...addedFiles]);
+          await Promise.all(
+            addedFiles.map(async (addedFileState) => {
+              try {
+                const res = await edgestore.publicFiles.upload({
+                  file: addedFileState.file,
+                  onProgressChange: async (progress) => {
+                    updateFileProgress(addedFileState.key, progress);
+                    if (progress === 100) {
+                      // wait 1 second to set it to complete
+                      // so that the user can see the progress bar at 100%
+                      await new Promise((resolve) => setTimeout(resolve, 1000));
+                      updateFileProgress(addedFileState.key, 'COMPLETE');
+                    }
+                  },
+                });
+                console.log(res.url);
+              } catch (err) {
+                updateFileProgress(addedFileState.key, 'ERROR');
+              }
+            }),
+          );
+        }}
+      />
                   </div>
                 </section>
         </form>

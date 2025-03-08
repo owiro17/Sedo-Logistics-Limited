@@ -1,5 +1,4 @@
 'use client';
-
 import { formatFileSize } from '@edgestore/react/utils';
 import {
   CheckCircleIcon,
@@ -9,10 +8,9 @@ import {
   UploadCloudIcon,
   XIcon,
 } from 'lucide-react';
-import React from 'react';
+import * as React from 'react';
 import { useDropzone, type DropzoneOptions } from 'react-dropzone';
 import { twMerge } from 'tailwind-merge';
-
 const variants = {
   base: 'relative rounded-md p-4 w-full flex justify-center items-center flex-col cursor-pointer border border-dashed border-gray-400 dark:border-gray-300 transition-colors duration-200 ease-in-out',
   active: 'border-2',
@@ -21,14 +19,12 @@ const variants = {
   accept: 'border border-blue-500 bg-blue-500 bg-opacity-10',
   reject: 'border border-red-700 bg-red-700 bg-opacity-10',
 };
-
 export type FileState = {
   file: File;
   key: string; // used to identify the file in the progress callback
   progress: 'PENDING' | 'COMPLETE' | 'ERROR' | number;
   abortController?: AbortController;
 };
-
 type InputProps = {
   className?: string;
   value?: FileState[];
@@ -37,7 +33,6 @@ type InputProps = {
   disabled?: boolean;
   dropzoneOptions?: Omit<DropzoneOptions, 'disabled'>;
 };
-
 const ERROR_MESSAGES = {
   fileTooLarge(maxSize: number) {
     return `The file is too large. Max size is ${formatFileSize(maxSize)}.`;
@@ -52,7 +47,6 @@ const ERROR_MESSAGES = {
     return 'The file is not supported.';
   },
 };
-
 const MultiFileDropzone = React.forwardRef<HTMLInputElement, InputProps>(
   (
     { dropzoneOptions, value, className, disabled, onFilesAdded, onChange },
@@ -94,7 +88,6 @@ const MultiFileDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       },
       ...dropzoneOptions,
     });
-
     // styling
     const dropZoneClassName = React.useMemo(
       () =>
@@ -115,7 +108,6 @@ const MultiFileDropzone = React.forwardRef<HTMLInputElement, InputProps>(
         className,
       ],
     );
-
     // error validation messages
     const errorMessage = React.useMemo(() => {
       if (fileRejections[0]) {
@@ -132,7 +124,6 @@ const MultiFileDropzone = React.forwardRef<HTMLInputElement, InputProps>(
       }
       return undefined;
     }, [fileRejections, dropzoneOptions]);
-
     return (
       <div className="w-full">
         <div className="flex w-full flex-col gap-2">
@@ -151,13 +142,11 @@ const MultiFileDropzone = React.forwardRef<HTMLInputElement, InputProps>(
                 </div>
               </div>
             </div>
-
             {/* Error Text */}
             <div className="mt-1 text-xs text-red-500">
               {customError ?? errorMessage}
             </div>
           </div>
-
           {/* Selected Files */}
           {value?.map(({ file, abortController, progress }, i) => (
             <div
@@ -232,5 +221,4 @@ const MultiFileDropzone = React.forwardRef<HTMLInputElement, InputProps>(
   },
 );
 MultiFileDropzone.displayName = 'MultiFileDropzone';
-
 export { MultiFileDropzone };
