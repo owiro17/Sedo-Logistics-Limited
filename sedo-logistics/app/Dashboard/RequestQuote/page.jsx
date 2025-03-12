@@ -4,13 +4,50 @@ import * as React from "react";
 import { useEdgeStore } from "../../../libs/edgestore";
 import { useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
+import toast, { Toaster } from 'react-hot-toast';
+
 // import { MultiFileDropzone } from "../../components/MultiFileDropZone";
 import { MultiFileDropzone } from "../../components/MultiFileDropZone";
 export default function Page() {
-  const [file, setFile] = useState();
+  const [file, setFile] = useState([]);
   // const { edgestore } = useEdgeStore();
   const [userData, setUser] = useState(null); // To store user data
   const user = useUser();
+  const CreateQuotation = async (formData) => {
+    console.log("Quotation Data: ", formData.get("firstName"));
+    const fullName = formData.get("fullName");
+    const pickupLocation = formData.get("pickupLocation");
+    const deliveryLocation = formData.get("deliveryLocation");
+    const typeOfGoods = formData.get("typeOfGoods");
+    const numberOfItems = formData.get("numberOfItems");
+    const weight = formData.get("weight");
+    const dimensions = formData.get("dimensions");
+    const missingFields = [];
+    if (!fullName || !pickupLocation || !deliveryLocation || !typeOfGoods || !numberOfItems || !weight || !dimensions) {
+      missingFields.push("fullName", "pickupLocation", "deliveryLocation", "typeOfGoods", "numberOfItems", "weight", "dimensions");
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    toast.success('Quotation Created Successfully');
+
+    // validate input from from frontend
+
+
+    // try {
+    //   const response = await fetch("/api/getQuotation", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
+    //   const data = await response.json();
+    //   console.log("Success:", data);
+    // } catch (error) {
+    //   console.error("Error:", error);
+    // }
+  };
+
   useEffect(() => {
     setUser(user.user);
   }, []);
@@ -33,6 +70,7 @@ export default function Page() {
   return (
     <>
       <main className="w-full p-8 top-0 bg-white border border-black rounded-lg shadow-md">
+        <Toaster />
         <h1 className="heading text-3xl text-center">Lets Create Your Quotation</h1>
         <p className="paragraph text-sm font-openSans text-gray-700 text-center">
           Please provide the necessary documents and information below
@@ -58,6 +96,7 @@ export default function Page() {
                         <input
                           type="text"
                           id="firstName"
+                          name="firstName"
                           className="custom-input bg-gray-300"
                           value={userData?.firstName}
                           disabled
@@ -73,6 +112,7 @@ export default function Page() {
                           <input
                             type="text"
                             id="lastName"
+                            name="lastName"
                             className="custom-input bg-gray-300"
                             value={userData?.lastName}
                             disabled
@@ -91,6 +131,7 @@ export default function Page() {
                       <input
                         type="text"
                         id="fullName"
+                        name="fullName"
                         className="custom-input bg-gray-300"
                         value={userData?.fullName}
                         disabled
@@ -105,6 +146,7 @@ export default function Page() {
                             <input
                             type="email"
                             id="email"
+                            name="email"
                             className="custom-input bg-gray-300"
                             value={userData?.emailAddresses[0].emailAddress}
                             disabled
@@ -136,6 +178,7 @@ export default function Page() {
                           <input
                             type="text"
                             id="pickupLocation"
+                            name="pickupLocation"
                             className="custom-input"
                             placeholder="city, country"
                           />
@@ -150,6 +193,7 @@ export default function Page() {
                           <input
                             type="text"
                             id="deliveryLocation"
+                            name="deliveryLocation"
                             className="custom-input"
                             placeholder="city, country"
 
@@ -164,7 +208,7 @@ export default function Page() {
                         >
                           Preferred Shipping Method
                         </label>
-                        <select id="shippingMethod" className="custom-input w-[180px]">
+                        <select id="shippingMethod" name="shippingMethod" className="custom-input w-[180px]">
                           <option value="air">Air</option>
                           <option value="sea">Sea</option>
                           <option value="road">Road</option>
@@ -181,6 +225,7 @@ export default function Page() {
                           <input
                             type="text"
                             id="Address"
+                            name="Address"
                             className="custom-input"
                             placeholder=" 123 Avenue,city"
 
@@ -209,6 +254,7 @@ export default function Page() {
                                 <input
                                     type="text"
                                     id="typeOfGoods"
+                                    name="typeOfGoods"
                                     className="custom-input"
                                     placeholder="e.g., electronics, furniture"
                                 />
@@ -223,6 +269,7 @@ export default function Page() {
                                 <input
                                     type="number"
                                     id="numberOfItems"
+                                    name="numberOfItems"
                                     className="custom-input"
                                     placeholder="0"
                                 />
@@ -239,6 +286,7 @@ export default function Page() {
                                 <input
                                     type="text"
                                     id="weight"
+                                    name="weight"
                                     className="custom-input"
                                     placeholder="kg/lbs"
                                 />
@@ -253,6 +301,7 @@ export default function Page() {
                                 <input
                                     type="text"
                                     id="dimensions"
+                                    name="dimensions"
                                     className="custom-input"
                                     placeholder="(L x W x H ) cm/inches"
                                 />
@@ -268,6 +317,7 @@ export default function Page() {
                             <input
                                 type="text"
                                 id="additionalServices"
+                                name="additionalServices"
                                 className="custom-input"
                                 placeholder="e.g., packaging, insurance"
                             />
@@ -306,6 +356,8 @@ export default function Page() {
                     }
                   },
                 });
+                // set 
+                setFile(res.url);
                 console.log(res.url);
               } catch (err) {
                 updateFileProgress(addedFileState.key, 'ERROR');
@@ -315,6 +367,8 @@ export default function Page() {
         }}
       />
                   </div>
+                  <button type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Submit</button>
+
                 </section>
         </form>
       </main>

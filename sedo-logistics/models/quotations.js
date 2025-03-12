@@ -2,6 +2,7 @@ import {Schema, mongoose} from 'mongoose';
 
 const quotationSchema = new Schema({
     userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    approved : { type: Boolean, required: true, default: false },
     consignee: {
       firstName: { type: String, required: true },
       lastName: { type: String, required: true },

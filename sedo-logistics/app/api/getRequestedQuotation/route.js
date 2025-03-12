@@ -6,7 +6,7 @@ import connectToDatabase from '../../../libs/connectDB';
 // import {createOrUpdateUser} from '../../../libs/actions/createUpdateUser';
 import { currentUser} from '@clerk/nextjs/server'
 import User from '../../../models/user';
-import quotationSchema from '@/models/quotations';
+import requestedQuotationSchema from '../../../models/requestedQuotesfig';
 
 export async function POST(Request){
     // Ensure user is authenticated
