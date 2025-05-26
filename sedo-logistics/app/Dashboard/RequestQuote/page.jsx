@@ -13,20 +13,40 @@ export default function Page() {
   // const { edgestore } = useEdgeStore();
   const [userData, setUser] = useState(null); // To store user data
   const user = useUser();
+
   const CreateQuotation = async (formData) => {
-    console.log("Quotation Data: ", formData.get("firstName"));
-    const fullName = formData.get("fullName");
+    // console.log("Quotation Data: ", formData.get("firstName"));
     const pickupLocation = formData.get("pickupLocation");
     const deliveryLocation = formData.get("deliveryLocation");
     const typeOfGoods = formData.get("typeOfGoods");
     const numberOfItems = formData.get("numberOfItems");
     const weight = formData.get("weight");
     const dimensions = formData.get("dimensions");
-    const missingFields = [];
-    if (!fullName || !pickupLocation || !deliveryLocation || !typeOfGoods || !numberOfItems || !weight || !dimensions) {
-      missingFields.push("fullName", "pickupLocation", "deliveryLocation", "typeOfGoods", "numberOfItems", "weight", "dimensions");
-      toast.error('Please fill in all required fields');
+    console.log("added files" + file);
+
+    console.log("Quotation Data: ", JSON.stringify(Object.fromEntries(formData.entries())));
+    // validate inputs  from frontend
+    switch (true) {
+      case !pickupLocation:
+      toast.error('Please fill in the Pickup Location');
       return;
+      case !deliveryLocation:
+      toast.error('Please fill in the Delivery Location');
+      return;
+      case !typeOfGoods:
+      toast.error('Please fill in the Type of Goods');
+      return;
+      case !numberOfItems:
+      toast.error('Please fill in the Number of Items');
+      return;
+      case !weight:
+      toast.error('Please fill in the Weight');
+      return;
+      case !dimensions:
+      toast.error('Please fill in the Dimensions');
+      return;
+      default:
+      break;
     }
     toast.success('Quotation Created Successfully');
 
@@ -357,7 +377,7 @@ export default function Page() {
                   },
                 });
                 // set 
-                setFile(res.url);
+
                 console.log(res.url);
               } catch (err) {
                 updateFileProgress(addedFileState.key, 'ERROR');
