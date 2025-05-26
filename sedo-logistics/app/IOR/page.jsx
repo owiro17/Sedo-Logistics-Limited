@@ -84,7 +84,7 @@ const page = () => {
             className="aspect-square absolute z-0"
           />
           <Image
-            src={"/customsIllustration.jpg"}
+            src={"/IORIll.svg"}
             alt={"Customs Illustration"}
             width={280}
             height={350}
@@ -109,21 +109,21 @@ const page = () => {
             </p>
             <div className="flex flex-col lg:flex-row gap-4 items-center justify-center mt-4">
               <div className="flex flex-col items-center lg:items-start border border-secondary bg-freightCardBg bg-cover rounded-lg p-4 w-[65dvw] lg:h-[55dvh] gap-2">
-                <Image src={"/compliance.svg"} alt={""} width={30} height={40} />
+                <Image src={"/globe.svg"} alt={""} width={30} height={40} />
                 <h4 className="font-raleway text-secondary font-bold text-xl">Full Compliance</h4>
                 <p className="paragraph text-wrap text-center lg:text-left">
                   We ensure compliance with all Kenyan import regulations and tax requirements.
                 </p>
               </div>
               <div className="flex flex-col items-center lg:items-start border border-secondary bg-freightCardBg bg-cover rounded-lg p-4 w-[65dvw] lg:w-[65dvw] lg:h-[55dvh] gap-2">
-                <Image src={"/support.svg"} alt={""} width={30} height={40} />
+                <Image src={"/check.svg"} alt={""} width={30} height={40} />
                 <h4 className="font-raleway text-secondary font-bold text-xl">Dedicated Support</h4>
                 <p className="paragraph text-wrap text-center lg:text-left">
                   Our team guides you through every step—from documentation to clearance.
                 </p>
               </div>
               <div className="flex flex-col items-center lg:items-start border border-secondary bg-freightCardBg bg-cover rounded-lg p-4 w-[65dvw] lg:h-[55dvh] gap-2">
-                <Image src={"/fastProcess.svg"} alt={""} width={30} height={40} />
+                <Image src={"/speed.svg"} alt={""} width={30} height={40} />
                 <h4 className="font-raleway text-secondary font-bold text-xl">Quick Turnaround</h4>
                 <p className="paragraph text-wrap text-center lg:text-left">
                   Efficient processing so your goods are released and delivered without delay.
@@ -132,7 +132,7 @@ const page = () => {
             </div>
           </div>
           <Image
-            src={"/iorIllustration.svg"}
+            src={"/seaFreightIll.svg"}
             alt={""}
             width={300}
             height={300}
