@@ -1,21 +1,40 @@
 "use client";
-import React from "react";
+import React, { useState,} from "react"; // Added useEffect
 import Image from "next/image";
-import { useState } from "react";
 import Link from "next/link";
+import { useUser } from '@clerk/clerk-react'
+import { UserButton  } from '@clerk/nextjs'
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const[showServices, setShowServices] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+  const { isSignedIn } = useUser()
+
+  // const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 }); // New state for cursor position
+
+  // Effect to track mouse movement
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     setCursorPosition({ x: event.clientX, y: event.clientY }); // Update cursor position
+  //   };
+
+  //   window.addEventListener("mousemove", handleMouseMove); // Add event listener
+
+  //   return () => {
+  //     window.removeEventListener("mousemove", handleMouseMove); // Cleanup on unmount
+  //   };
+  // }, []);
 
   const menu = [
     { name: "Home", icon: "/Home.svg", link: "/" },
     { name: "About Us", icon: "/about.svg", link: "/About" },
-    { name: "Login", icon: "/login.svg", link: "/Login" },
+    { name: "Sign-in", icon: "/login.svg", link: "/Sign-in" },
   ];
   return (
     <>
-      <nav className="flex z-50  top-0 w-full  lg:px-24 mb-20 bg-[#E1F2F3]   fixed left-0 flew-row justify-between bg-opacity-90   items-center p-5 ">
+      {/* Display cursor position for debugging */}
+      {/* <div>Cursor Position: {`X: ${cursorPosition.x}, Y: ${cursorPosition.y}`}</div> */}
+      <nav className="flex z-50  top-0 w-full  lg:px-24 mb-20  bg-[#E1F2F3]   fixed left-0 flew-row justify-between bg-opacity-90   items-center p-5 ">
         {/* <div className="w-full z-30  fixed left-0 top-0 bg-black  blur-xl h-[65px]"></div> */}
         <Link href="/">
           <Image
@@ -81,10 +100,12 @@ const Navbar = () => {
               </ul>
             </div>
           )}
+        {
+          isSignedIn ? <UserButton ></UserButton >:<li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 ">
+          <Link href="/Sign-in">Sign-in</Link> 
+        </li>
+        }
 
-          <li className="font-manrope hover:text-[#1790C5] font-normal text-zinc-800  transition-all ease-in-out duration-100 ">
-            <Link href="/Login">Login</Link>
-          </li>
         </ul>
 
         <Image

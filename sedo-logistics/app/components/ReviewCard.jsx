@@ -10,7 +10,6 @@ const ReviewCard = () => {
             {UserDetails.map((item, index) => (
                 <div key={index} className="bg-reviewCardBg bg-cover object-fill  rounded-md md:w-[50dvw] lg:w-[35dvw]   bg-no-repeat m-auto px-3 lg:px-5 py-10 relative">
                     <div className="flex flex-col md:flex-row lg:flex-col items-center gap-5">
-                        <Image src={item.profile} alt="profile pic" width={70} height={70} className=" rounded-full w-[70px] h-[70px] object-cover" />
                         <h3 className="text-secondary font-raleway  text-center lg:text-left text-3xl font-semibold">{item.name}</h3>
 
                     </div>
